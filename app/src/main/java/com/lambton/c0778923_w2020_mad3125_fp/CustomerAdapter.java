@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder> {
 
-    private ArrayList<String> customerArrayList;
+    private ArrayList<Customer> customerArrayList;
 
-    public CustomerAdapter(ArrayList<String> customerArray) {
+    public CustomerAdapter(ArrayList<Customer> customerArray) {
         this.customerArrayList = customerArray;
     }
 
@@ -34,8 +34,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
 
-        CanadaAttraction canadaAttraction = this.customerArrayList.get(position);
-        holder.txtName.setText(canadaAttraction.getName());
+        Customer cus = this.customerArrayList.get(position);
+        holder.txtName.setText(cus.fullName());
 
         /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
