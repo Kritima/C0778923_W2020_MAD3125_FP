@@ -26,6 +26,14 @@ public class Customer {
         return lName;
     }
 
+    public String fullName() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(lName.toUpperCase());
+        sb.append(", ");
+        sb.append(fName.substring(0,1).toUpperCase() + fName.substring(1));
+        return sb.toString();
+    }
+
     public String getEmail() {
         return email;
     }
