@@ -7,6 +7,10 @@ public class Customer {
     private String lName;
     private String email;
 
-    
-
+    public Customer(String id, String fName, String lName, String email) {
+        this.id = id;
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+    }
 }
