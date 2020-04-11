@@ -21,5 +21,18 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         {
             this.customerArrayList = customerArray;
         }
-        
+
+    @NonNull
+    @Override
+    public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View customerItem= layoutInflater.inflate(R.layout.item_customer, parent, false);
+        CustomerViewHolder customerViewHolder = new CustomerViewHolder(customerItem);
+        return customerViewHolder;
+    }
+    
+
+
+}
 }
