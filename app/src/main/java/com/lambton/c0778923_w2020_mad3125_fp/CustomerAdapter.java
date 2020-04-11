@@ -31,7 +31,30 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         CustomerViewHolder customerViewHolder = new CustomerViewHolder(customerItem);
         return customerViewHolder;
     }
-    
+
+    @Override
+    public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
+
+        CanadaAttraction canadaAttraction = this.attractionArrayList.get(position);
+        holder.txtName.setText(canadaAttraction.getName());
+        holder.imgFlag.setImageResource(canadaAttraction.getThumbnail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CanadaAttraction ca = attractionArrayList.get(position);
+                Intent intent = new Intent(holder.itemView.getContext(), AttractionDetailsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("attractionsKey", ca);
+                intent.putExtras(bundle);
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
+
+    }
+
+
 
 
 }
