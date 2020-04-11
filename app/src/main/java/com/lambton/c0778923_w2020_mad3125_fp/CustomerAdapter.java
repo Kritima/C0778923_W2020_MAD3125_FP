@@ -35,7 +35,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
     @Override
     public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
 
-        CanadaAttraction canadaAttraction = this.attractionArrayList.get(position);
+        CanadaAttraction canadaAttraction = this.customerArrayList.get(position);
         holder.txtName.setText(canadaAttraction.getName());
         holder.imgFlag.setImageResource(canadaAttraction.getThumbnail());
 
@@ -54,7 +54,10 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
 
     }
 
-
+    @Override
+    public int getItemCount() {
+        return this.customerArrayList.size();
+    }
 
 
 }
