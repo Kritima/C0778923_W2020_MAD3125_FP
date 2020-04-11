@@ -15,19 +15,18 @@ import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder> {
 
-        private ArrayList<String> customerArrayList;
+    private ArrayList<String> customerArrayList;
 
-        public CustomerAdapter(ArrayList<String> customerArray)
-        {
-            this.customerArrayList = customerArray;
-        }
+    public CustomerAdapter(ArrayList<String> customerArray) {
+        this.customerArrayList = customerArray;
+    }
 
     @NonNull
     @Override
     public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View customerItem= layoutInflater.inflate(R.layout.item_customer, parent, false);
+        View customerItem = layoutInflater.inflate(R.layout.item_customer, parent, false);
         CustomerViewHolder customerViewHolder = new CustomerViewHolder(customerItem);
         return customerViewHolder;
     }
@@ -37,9 +36,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
 
         CanadaAttraction canadaAttraction = this.customerArrayList.get(position);
         holder.txtName.setText(canadaAttraction.getName());
-        holder.imgFlag.setImageResource(canadaAttraction.getThumbnail());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CanadaAttraction ca = attractionArrayList.get(position);
@@ -50,7 +48,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
                 holder.itemView.getContext().startActivity(intent);
 
             }
-        });
+        });*/
 
     }
 
@@ -59,6 +57,15 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         return this.customerArrayList.size();
     }
 
+    public class CustomerViewHolder extends RecyclerView.ViewHolder {
 
-}
+        public TextView txtName;
+
+        public CustomerViewHolder(@NonNull View itemView) {
+            super(itemView);
+            this.txtName = (TextView) itemView.findViewById(R.id.name);
+
+        }
+    }
+
 }
