@@ -78,25 +78,25 @@ tools:context=".AddNewCustomerActivity">
         app:layout_constraintTop_toBottomOf="@+id/Name">
 
         <RadioButton
-            android:id="@+id/radioButton"
-            android:buttonTint="@color/colorPrimary"
+            android:id="@+id/radioButtonMale"
+            android:buttonTint="@color/basic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Full Time" />
+            android:text="Male" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonFemale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorPrimary"
-            android:text="Part Time" />
+            android:buttonTint="@color/basic"
+            android:text="Female" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButtonOther"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorPrimary"
-            android:text="Trainee" />
+            android:buttonTint="@color/basic"
+            android:text="Other" />
     </RadioGroup>
 
     <LinearLayout
@@ -225,8 +225,7 @@ tools:context=".AddNewCustomerActivity">
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/spinner2">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EmailTextInputEditText"
