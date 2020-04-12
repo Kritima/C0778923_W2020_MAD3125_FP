@@ -28,8 +28,9 @@ public class Customer {
 
     public String fullName() {
         StringBuilder sb = new StringBuilder();
-        sb.append(lName.toUpperCase());
         sb.append(fName.substring(0,1).toUpperCase() + fName.substring(1));
+        sb.append(" ");
+        sb.append(lName.substring(0,1).toUpperCase() + lName.substring(1));
         return sb.toString();
     }
 
