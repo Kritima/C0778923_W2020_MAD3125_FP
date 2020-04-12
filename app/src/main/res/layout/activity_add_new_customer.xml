@@ -425,44 +425,6 @@ tools:context=".AddNewCustomerActivity">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Issue" />
 
-
-    <LinearLayout
-        android:id="@+id/Description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbFeedback">
-
-        <ImageView
-            android:id="@+id/imageViewDescription"
-            android:layout_width="40dp"
-            android:paddingLeft="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_description_black_24dp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/DescriptionTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/DescriptionTextInputEditText"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:hint="Description" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
