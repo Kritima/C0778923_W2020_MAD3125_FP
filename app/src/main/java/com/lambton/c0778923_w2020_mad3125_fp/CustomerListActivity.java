@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,6 +20,7 @@ public class CustomerListActivity extends AppCompatActivity {
     private RecyclerView rvCustomerList;
     private ArrayList<Customer> customerListArrayList;
     private CustomerAdapter customerAdapter;
+    FloatingActionButton floatingActionButtonAddCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,9 @@ public class CustomerListActivity extends AppCompatActivity {
     private void populateCustomer() {
         customerListArrayList = new ArrayList<>();
 
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
         customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
     }
 }
