@@ -316,7 +316,7 @@ tools:context=".AddNewCustomerActivity">
         app:layout_constraintTop_toBottomOf="@+id/Phone">
 
         <ImageView
-            android:id="@+id/imageViewDate"
+            android:id="@+id/imageViewBirthDate"
             android:layout_width="40dp"
             android:paddingLeft="10dp"
             android:layout_height="match_parent"
