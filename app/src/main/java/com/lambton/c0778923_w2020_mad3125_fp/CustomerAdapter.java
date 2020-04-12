@@ -37,18 +37,18 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         Customer cus = this.customerArrayList.get(position);
         holder.txtName.setText(cus.fullName());
 
-        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CanadaAttraction ca = attractionArrayList.get(position);
-                Intent intent = new Intent(holder.itemView.getContext(), AttractionDetailsActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("attractionsKey", ca);
-                intent.putExtras(bundle);
+                Customer cs = customerArrayList.get(position);
+                Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                //Bundle bundle = new Bundle();
+               // bundle.putSerializable("attractionsKey", ca);
+                //intent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(intent);
 
             }
-        });*/
+        });
 
     }
 
