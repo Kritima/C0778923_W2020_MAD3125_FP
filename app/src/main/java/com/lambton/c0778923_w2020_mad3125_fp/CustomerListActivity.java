@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -48,6 +50,23 @@ public class CustomerListActivity extends AppCompatActivity {
 
     }
 
+    public  String loadJSONFromAsset()
+    {
+        String json;
+        try {
+            InputStream inputStream = getAssets().open("customer.json");
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            json = new String(buffer);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return json;
+    }
     private void populateCustomer() {
         customerListArrayList = new ArrayList<>();
 

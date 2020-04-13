@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ShowBillDetailsActivity extends AppCompatActivity {
+public class ShowBillActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_bill_details);
+        setContentView(R.layout.activity_show_bill);
     }
 }
