@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.hydro.HydroFragment"
+        android:label="@string/title_hydro"
+        tools:layout="@layout/fragment_hydro" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.mobile.MobileFragment"
+        android:label="@string/title_mobile"
+        tools:layout="@layout/fragment_mobile" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.lambton.c0778923_w2020_mad3125_fp.ui.internet.InternetFragment"
+        android:label="@string/title_internet"
+        tools:layout="@layout/fragment_internet" />
 </navigation>

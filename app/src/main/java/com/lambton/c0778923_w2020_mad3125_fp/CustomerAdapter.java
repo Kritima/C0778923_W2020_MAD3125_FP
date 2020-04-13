@@ -41,7 +41,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             @Override
             public void onClick(View v) {
                 Customer cs = customerArrayList.get(position);
-                Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                Intent intent = new Intent(holder.itemView.getContext(), ShowBillActivity.class);
                 //Bundle bundle = new Bundle();
                // bundle.putSerializable("attractionsKey", ca);
                 //intent.putExtras(bundle);
