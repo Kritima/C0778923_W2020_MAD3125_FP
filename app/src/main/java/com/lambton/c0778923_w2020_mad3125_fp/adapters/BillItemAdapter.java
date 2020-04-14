@@ -1,5 +1,6 @@
 package com.lambton.c0778923_w2020_mad3125_fp.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
+import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillActivity;
 
 import java.util.ArrayList;
 
@@ -43,11 +45,11 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
             @Override
             public void onClick(View v) {
                // Customer cs = customerArrayList.get(position);
-               // Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                Intent intent = new Intent(holder.itemView.getContext(), ShowBillActivity.class);
                 //Bundle bundle = new Bundle();
                 // bundle.putSerializable("attractionsKey", ca);
                 //intent.putExtras(bundle);
-               // holder.itemView.getContext().startActivity(intent);
+                holder.itemView.getContext().startActivity(intent);
 
             }
         });

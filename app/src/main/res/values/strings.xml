@@ -13,9 +13,10 @@
         <item>Sir</item>
         <item>Lord</item>
     </string-array>
+
     <string name="title_activity_show_bill">ShowBillActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_hydro">Hydro</string>
+    <string name="title_mobile">Mobile</string>
+    <string name="title_internet">Internet</string>
 
 </resources>
