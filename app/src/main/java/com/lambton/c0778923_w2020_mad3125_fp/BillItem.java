@@ -17,4 +17,12 @@ public class BillItem {
     public int getThumbnail() {
         return thumbnail;
     }
+
+    public void setBillName(String billName) {
+        this.billName = billName;
+    }
+
+    public void setThumbnail(int thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 }
