@@ -1,4 +1,4 @@
-package com.lambton.c0778923_w2020_mad3125_fp.ui.dashboard;
+package com.lambton.c0778923_w2020_mad3125_fp.ui.mobile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

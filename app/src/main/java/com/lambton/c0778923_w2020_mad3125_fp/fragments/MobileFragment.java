@@ -1,4 +1,4 @@
-package com.lambton.c0778923_w2020_mad3125_fp.ui.home;
+package com.lambton.c0778923_w2020_mad3125_fp.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,18 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
+import com.lambton.c0778923_w2020_mad3125_fp.ui.mobile.DashboardViewModel;
 
-public class HomeFragment extends Fragment {
+public class MobileFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private DashboardViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        dashboardViewModel =
+                ViewModelProviders.of(this).get(DashboardViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        final TextView textView = root.findViewById(R.id.text_dashboard);
+        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
