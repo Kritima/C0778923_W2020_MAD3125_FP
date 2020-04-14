@@ -26,15 +26,17 @@ public class CustomerListActivity extends AppCompatActivity {
     private ArrayList<Customer> customerListArrayList;
     private CustomerAdapter customerAdapter;
     FloatingActionButton floatingActionButtonAddCustomer;
+    Customer c = new Customer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
 
+       // processJson();
+        populateCustomer();
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = (FloatingActionButton) findViewById(R.id.floating_action_button);
-        populateCustomer();
 
         customerAdapter = new CustomerAdapter(customerListArrayList);
         rvCustomerList.setLayoutManager(new LinearLayoutManager(this));
@@ -69,7 +71,7 @@ public class CustomerListActivity extends AppCompatActivity {
         return json;
     }
 
-    private void processJson()
+    /*private void processJson()
     {
         String js = loadJSONFromAsset();
         if(js!=null)
@@ -79,7 +81,7 @@ public class CustomerListActivity extends AppCompatActivity {
                 customerListArrayList = new ArrayList<>();
                 for(int i=0; i<jsonArray.length();i++)
                 {
-                    JSONObject jsonObject = JSONArray.getJSONObject(i);
+                    JSONObject jsonObject = JSONArray.(i);
                     if(jsonObject.has("customers"))
                     {
                         String id = jsonObject.getString("id");
@@ -89,12 +91,11 @@ public class CustomerListActivity extends AppCompatActivity {
                         customerListArrayList.add(new Customer(id,fname,lname,email));
                     }
                 }
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
     private void populateCustomer() {
         customerListArrayList = new ArrayList<>();
 
