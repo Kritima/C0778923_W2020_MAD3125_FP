@@ -36,7 +36,7 @@ public class CustomerListActivity extends AppCompatActivity {
        // processJson();
         populateCustomer();
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
-        floatingActionButtonAddCustomer = (FloatingActionButton) findViewById(R.id.floating_action_button);
+        floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);
 
         customerAdapter = new CustomerAdapter(customerListArrayList);
         rvCustomerList.setLayoutManager(new LinearLayoutManager(this));
