@@ -14,7 +14,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private RecyclerView rvBillItemList;
     private ArrayList<BillItem> billItemListArrayList;
     private BillItemAdapter billItemAdapter;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,13 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         rvBillItemList.setAdapter(billItemAdapter);
     }
 
+    private void populateBillItem() {
+        billItemListArrayList = new ArrayList<>();
 
+        billItemListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
+    }
 
 }
