@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_color"
-    tools:context=".ShowBillDetailsActivity">
+    tools:context=".ui.ShowBillDetailsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewBillItem"

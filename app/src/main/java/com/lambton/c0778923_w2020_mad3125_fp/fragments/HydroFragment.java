@@ -13,19 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.ui.hydro.HomeViewModel;
+import com.lambton.c0778923_w2020_mad3125_fp.models.HydroViewModel;
 
 public class HydroFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private HydroViewModel hydroViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        hydroViewModel =
+                ViewModelProviders.of(this).get(HydroViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        hydroViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

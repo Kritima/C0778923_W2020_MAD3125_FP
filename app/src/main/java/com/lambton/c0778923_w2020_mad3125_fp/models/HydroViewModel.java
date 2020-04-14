@@ -1,16 +1,16 @@
-package com.lambton.c0778923_w2020_mad3125_fp.ui.hydro;
+package com.lambton.c0778923_w2020_mad3125_fp.models;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class HydroViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public HydroViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is hydro fragment");
     }
 
     public LiveData<String> getText() {

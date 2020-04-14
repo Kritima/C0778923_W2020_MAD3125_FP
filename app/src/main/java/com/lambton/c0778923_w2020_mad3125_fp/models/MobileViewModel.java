@@ -1,16 +1,16 @@
-package com.lambton.c0778923_w2020_mad3125_fp.ui.internet;
+package com.lambton.c0778923_w2020_mad3125_fp.models;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class MobileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public MobileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is mobile fragment");
     }
 
     public LiveData<String> getText() {

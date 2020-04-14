@@ -1,4 +1,4 @@
-package com.lambton.c0778923_w2020_mad3125_fp;
+package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
@@ -42,7 +43,7 @@ public class CustomerListActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CustomerListActivity.this,AddNewCustomerActivity.class);
+                Intent intent = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
                 startActivity(intent);
             }
         });

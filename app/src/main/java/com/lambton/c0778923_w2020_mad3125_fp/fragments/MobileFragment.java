@@ -13,19 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.ui.mobile.DashboardViewModel;
+import com.lambton.c0778923_w2020_mad3125_fp.models.MobileViewModel;
 
 public class MobileFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private MobileViewModel mobileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
+        mobileViewModel =
+                ViewModelProviders.of(this).get(MobileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        mobileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
