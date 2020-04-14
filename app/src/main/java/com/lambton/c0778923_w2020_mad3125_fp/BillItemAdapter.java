@@ -53,7 +53,7 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
 
     @Override
     public int getItemCount() {
-        return this.customerArrayList.size();
+        return this.billItemArrayList.size();
     }
 
     public class BillItemViewHolder extends RecyclerView.ViewHolder {
