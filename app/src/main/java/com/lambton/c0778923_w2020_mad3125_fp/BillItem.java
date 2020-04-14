@@ -9,4 +9,12 @@ public class BillItem {
         this.billName = billName;
         this.thumbnail = thumbnail;
     }
+
+    public String getBillName() {
+        return billName;
+    }
+
+    public int getThumbnail() {
+        return thumbnail;
+    }
 }
