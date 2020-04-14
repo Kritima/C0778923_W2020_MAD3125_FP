@@ -2,39 +2,26 @@
   "customers": [
     {
       "id": "c200",
-      "name": "Ravi Tamada",
+      "fname": "Ravi",
+      "lname": "Tamada",
       "email": "ravi@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     },
     {
       "id": "c201",
-      "name": "Johnny Depp",
+      "fname": "Johnny",
+      "lname": "Depp",
       "email": "johnny_depp@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     },
     {
       "id": "c202",
       "name": "Leonardo Dicaprio",
       "email": "leonardo_dicaprio@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     },
     {
       "id": "c203",
@@ -113,24 +100,14 @@
       "name": "Clint Eastwood",
       "email": "clint_eastwood@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     },
     {
       "id": "c2010",
       "name": "Barack Obama",
       "email": "barack_obama@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     },
     {
       "id": "c2011",
@@ -149,12 +126,7 @@
       "name": "Eminem",
       "email": "eminem@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male",
-      "phone": {
-        "mobile": "+91 0000000000",
-        "home": "00 000000",
-        "office": "00 000000"
-      }
+      "gender" : "male"
     }
   ]
 }

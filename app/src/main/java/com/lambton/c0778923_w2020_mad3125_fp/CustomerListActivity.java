@@ -11,6 +11,7 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileReader;
@@ -66,6 +67,33 @@ public class CustomerListActivity extends AppCompatActivity {
         }
 
         return json;
+    }
+
+    private void processJson()
+    {
+        String js = loadJSONFromAsset();
+        if(js!=null)
+        {
+            try {
+                JSONArray jsonArray = new JSONArray(js);
+                customerListArrayList = new ArrayList<>();
+                for(int i=0; i<jsonArray.length();i++)
+                {
+                    JSONObject jsonObject = JSONArray.getJSONObject(i);
+                    if(jsonObject.has("customers"))
+                    {
+                        String id = jsonObject.getString("id");
+                        String fname = jsonObject.getString("fname");
+                        String lname = jsonObject.getString("lname");
+                        String email = jsonObject.getString("email");
+                        customerListArrayList.add(new Customer(id,fname,lname,email));
+                    }
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
     private void populateCustomer() {
         customerListArrayList = new ArrayList<>();
