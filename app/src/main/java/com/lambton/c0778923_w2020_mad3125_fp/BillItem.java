@@ -4,4 +4,9 @@ public class BillItem {
 
     private String billName;
     private int thumbnail;
+
+    public BillItem(String billName, int thumbnail) {
+        this.billName = billName;
+        this.thumbnail = thumbnail;
+    }
 }
