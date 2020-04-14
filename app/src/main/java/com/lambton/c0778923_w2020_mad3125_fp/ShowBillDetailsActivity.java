@@ -2,10 +2,11 @@ package com.lambton.c0778923_w2020_mad3125_fp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
 
 import java.util.ArrayList;
 
