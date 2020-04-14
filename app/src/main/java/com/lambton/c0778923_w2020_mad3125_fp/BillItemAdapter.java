@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillItemViewHolder> {
 
-    private ArrayList<Customer> customerArrayList;
+    private ArrayList<BillItem> billItemArrayList;
 
-    public CustomerAdapter(ArrayList<Customer> customerArray) {
-        this.customerArrayList = customerArray;
+    public BillItemAdapter(ArrayList<BillItem> billItemArray) {
+        this.billItemArrayList = billItemArray;
     }
 
     @NonNull
