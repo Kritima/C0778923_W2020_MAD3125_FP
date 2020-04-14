@@ -31,20 +31,21 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CustomerAdapter.CustomerViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final BillItemAdapter.BillItemViewHolder holder, final int position) {
 
-        Customer cus = this.customerArrayList.get(position);
-        holder.txtName.setText(cus.fullName());
+        BillItem billItem = this.billItemArrayList.get(position);
+        holder.txtName.setText(billItem.getBillName());
+        holder.ivThumbnail.setImageResource(billItem.getThumbnail());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customer cs = customerArrayList.get(position);
-                Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+               // Customer cs = customerArrayList.get(position);
+               // Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 //Bundle bundle = new Bundle();
                 // bundle.putSerializable("attractionsKey", ca);
                 //intent.putExtras(bundle);
-                holder.itemView.getContext().startActivity(intent);
+               // holder.itemView.getContext().startActivity(intent);
 
             }
         });
@@ -71,4 +72,3 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
 
 }
 
-}
