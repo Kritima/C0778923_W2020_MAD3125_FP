@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillItemAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
 
 import java.util.ArrayList;

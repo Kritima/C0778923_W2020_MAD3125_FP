@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import java.io.IOException;

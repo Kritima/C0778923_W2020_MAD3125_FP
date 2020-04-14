@@ -1,4 +1,4 @@
-package com.lambton.c0778923_w2020_mad3125_fp;
+package com.lambton.c0778923_w2020_mad3125_fp.adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lambton.c0778923_w2020_mad3125_fp.R;
+import com.lambton.c0778923_w2020_mad3125_fp.ShowBillDetailsActivity;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import java.util.ArrayList;

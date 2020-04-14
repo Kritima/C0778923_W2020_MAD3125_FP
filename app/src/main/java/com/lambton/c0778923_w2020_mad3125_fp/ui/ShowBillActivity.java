@@ -1,8 +1,9 @@
-package com.lambton.c0778923_w2020_mad3125_fp;
+package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.lambton.c0778923_w2020_mad3125_fp.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

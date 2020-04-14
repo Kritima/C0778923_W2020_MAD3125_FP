@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ShowBillActivity"
+            android:name=".ui.ShowBillActivity"
             android:label="@string/title_activity_show_bill"></activity>
         <activity android:name=".AddNewCustomerActivity" />
         <activity android:name=".ShowBillDetailsActivity" />
