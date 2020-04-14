@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder> {
+public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillItemViewHolder> {
 
     private ArrayList<Customer> customerArrayList;
 
@@ -21,16 +21,16 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
 
     @NonNull
     @Override
-    public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CustomerAdapter.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View customerItem = layoutInflater.inflate(R.layout.item_customer, parent, false);
-        CustomerViewHolder customerViewHolder = new CustomerViewHolder(customerItem);
+        CustomerAdapter.CustomerViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(customerItem);
         return customerViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CustomerViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final CustomerAdapter.CustomerViewHolder holder, final int position) {
 
         Customer cus = this.customerArrayList.get(position);
         holder.txtName.setText(cus.fullName());
@@ -41,7 +41,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
                 Customer cs = customerArrayList.get(position);
                 Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 //Bundle bundle = new Bundle();
-               // bundle.putSerializable("attractionsKey", ca);
+                // bundle.putSerializable("attractionsKey", ca);
                 //intent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(intent);
 
@@ -65,5 +65,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
 
         }
     }
+
+}
 
 }
