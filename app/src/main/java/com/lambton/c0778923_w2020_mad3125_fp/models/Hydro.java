@@ -5,4 +5,7 @@ public class Hydro {
     private String agencyName;
     private int unitConsumed;
 
+    public Hydro() {
+    }
+    
 }
