@@ -13,6 +13,10 @@ import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -30,8 +34,8 @@ public class CustomerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
 
-       // processJson();
-        populateCustomer();
+        processJson();
+       // populateCustomer();
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);
 
@@ -68,7 +72,7 @@ public class CustomerListActivity extends AppCompatActivity {
         return json;
     }
 
-    /*private void processJson()
+    private void processJson()
     {
         String js = loadJSONFromAsset();
         if(js!=null)
@@ -78,7 +82,7 @@ public class CustomerListActivity extends AppCompatActivity {
                 customerListArrayList = new ArrayList<>();
                 for(int i=0; i<jsonArray.length();i++)
                 {
-                    JSONObject jsonObject = JSONArray.(i);
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
                     if(jsonObject.has("customers"))
                     {
                         String id = jsonObject.getString("id");
@@ -92,7 +96,7 @@ public class CustomerListActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }*/
+    }
     private void populateCustomer() {
         customerListArrayList = new ArrayList<>();
 

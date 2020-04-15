@@ -8,9 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
+import com.lambton.c0778923_w2020_mad3125_fp.fragments.HydroFragment;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
 import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillActivity;
 
@@ -50,6 +53,9 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
                 // bundle.putSerializable("attractionsKey", ca);
                 //intent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(intent);
+               // AppCompatActivity activity = (AppCompatActivity) v.getContext();
+               // Fragment myFragment = new HydroFragment();
+              //  activity.getSupportFragmentManager().beginTransaction().replace(R.id.navigation_home, myFragment).addToBackStack(null).commit();
 
             }
         });
@@ -68,8 +74,8 @@ public class BillItemAdapter extends RecyclerView.Adapter<BillItemAdapter.BillIt
 
         public BillItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.txtName = (TextView) itemView.findViewById(R.id.name);
-            this.ivThumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
+            this.txtName = itemView.findViewById(R.id.name);
+            this.ivThumbnail =  itemView.findViewById(R.id.thumbnail);
 
         }
     }

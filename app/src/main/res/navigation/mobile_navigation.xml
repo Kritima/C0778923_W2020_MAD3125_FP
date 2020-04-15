@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_hydro">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_hydro"
         android:name="com.lambton.c0778923_w2020_mad3125_fp.fragments.HydroFragment"
         android:label="@string/title_hydro"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_hydro" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.lambton.c0778923_w2020_mad3125_fp.fragments.MobileFragment"
         android:label="@string/title_mobile"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_mobile" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.lambton.c0778923_w2020_mad3125_fp.fragments.InternetFragment"
-        android:label="@string/title_internet"
-        tools:layout="@layout/fragment_notifications" />
+    android:id="@+id/navigation_notifications"
+    android:name="com.lambton.c0778923_w2020_mad3125_fp.fragments.InternetFragment"
+    android:label="@string/title_internet"
+    tools:layout="@layout/fragment_internet" />
+
 </navigation>

@@ -23,7 +23,7 @@ public class InternetFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         internetViewModel =
                 ViewModelProviders.of(this).get(InternetViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        View root = inflater.inflate(R.layout.fragment_internet, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
         internetViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
