@@ -12,4 +12,12 @@ public class Internet {
         this.providerName = providerName;
         this.internetGbUsed = internetGbUsed;
     }
+
+    public String getProviderName() {
+        return providerName;
+    }
+
+    public int getInternetGbUsed() {
+        return internetGbUsed;
+    }
 }
