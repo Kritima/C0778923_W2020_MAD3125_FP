@@ -24,7 +24,7 @@
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
         <LinearLayout
             android:id="@+id/billId"
@@ -36,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner">
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <ImageView
@@ -67,7 +67,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/birthDate"
+            android:id="@+id/billDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -76,10 +76,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Email">
+            app:layout_constraintTop_toBottomOf="@+id/billId">
 
             <ImageView
-                android:id="@+id/imageViewBirthDate"
+                android:id="@+id/imageViewBillDate"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -87,7 +87,7 @@
                 app:srcCompat="@drawable/ic_date_range_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/birthDateTextInputLayout"
+                android:id="@+id/billDateTextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/birthDateTextInputEditText"
+                    android:id="@+id/billDateTextInputEditText"
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:hint="Birth Date" />
@@ -104,7 +104,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/Address"
+            android:id="@+id/billField7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -116,7 +116,7 @@
             app:layout_constraintTop_toBottomOf="@+id/radioGroupGender">
 
             <ImageView
-                android:id="@+id/imageViewAddress"
+                android:id="@+id/imageViewBillField7"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -124,7 +124,7 @@
                 app:srcCompat="@drawable/ic_location_on_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/AddressTextInputLayout"
+                android:id="@+id/billField7TextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/spinner2">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/AddressTextInputEditText"
+                    android:id="@+id/billField7TextInputEditText"
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:hint="Address" />
@@ -141,26 +141,9 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/CityTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:paddingLeft="50dp"
-            android:paddingRight="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/Address">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/CityTextInputEditText"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:hint="City" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
-            android:id="@+id/Zip"
+            android:id="@+id/billField8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -169,54 +152,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CityTextInputLayout">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ProvinceTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="50dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ProvinceTextInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Province" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/PostalCodeTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/PostalCodeTextInputEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Postal Code" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/Email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Zip">
+            app:layout_constraintTop_toBottomOf="@+id/billField7">
 
             <ImageView
-                android:id="@+id/imageViewEmail"
+                android:id="@+id/billField8ViewEmail"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -224,7 +163,7 @@
                 app:srcCompat="@drawable/ic_email_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/EmailTextInputLayout"
+                android:id="@+id/billField8TextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -232,7 +171,7 @@
                 android:paddingRight="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/EmailTextInputEditText"
+                    android:id="@+id/billField8TextInputEditText"
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:hint="Email" />
@@ -250,7 +189,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/birthDate">
+            app:layout_constraintTop_toBottomOf="@+id/billField8">
 
             <Button
                 android:id="@+id/btnSubmit"
