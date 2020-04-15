@@ -7,5 +7,9 @@ public class Hydro {
 
     public Hydro() {
     }
-    
+
+    public Hydro(String agencyName, int unitConsumed) {
+        this.agencyName = agencyName;
+        this.unitConsumed = unitConsumed;
+    }
 }
