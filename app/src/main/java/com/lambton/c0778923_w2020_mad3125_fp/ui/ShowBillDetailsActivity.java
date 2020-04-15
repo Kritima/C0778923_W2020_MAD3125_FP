@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
 
+    Customer customer;
     private RecyclerView rvBillItemList;
     private ArrayList<BillItem> billItemListArrayList;
     private BillItemAdapter billItemAdapter;
@@ -27,10 +28,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
 
-        Intent intent = getIntent();
-        String pos = intent.getStringExtra("POSITION_I_NEED");
-        Customer cus = customerListArrayList.get(Integer.parseInt(pos));
-
+         customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
 
         populateBillItem();
         rvBillItemList = findViewById(R.id.recyclerviewBillItem);

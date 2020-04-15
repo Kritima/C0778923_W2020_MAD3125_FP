@@ -47,7 +47,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
                 Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("customerKey", cs);
-                //intent.putExtras(bundle);
+                intent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(intent);
 
             }
