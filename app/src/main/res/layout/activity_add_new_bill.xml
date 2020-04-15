@@ -48,7 +48,7 @@
                     android:id="@+id/billIdTextInputEditText"
                     android:layout_width="330dp"
                     android:layout_height="match_parent"
-                    android:hint="Enter Full Name" />
+                    android:hint="Enter Bill Id" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -150,7 +150,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/billType">
+            app:layout_constraintTop_toBottomOf="@+id/billField1">
 
             <ImageView
                 android:id="@+id/imageViewBillField2"
@@ -187,7 +187,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/billType">
+            app:layout_constraintTop_toBottomOf="@+id/billField2">
 
             <ImageView
                 android:id="@+id/imageViewBillField3"
@@ -215,6 +215,117 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/billField4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billField3">
+
+            <ImageView
+                android:id="@+id/imageViewBillField4"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/billField4TextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/billField4TextInputEditText"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Address" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/billField5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billField4">
+
+            <ImageView
+                android:id="@+id/imageViewBillField5"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/billField5TextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/billField5TextInputEditText"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Address" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/billField6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billField5">
+
+            <ImageView
+                android:id="@+id/imageViewBillField6"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/billField6TextInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/billField6TextInputEditText"
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Address" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/billField7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -224,7 +335,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/billType">
+            app:layout_constraintTop_toBottomOf="@+id/billField6">
 
             <ImageView
                 android:id="@+id/imageViewBillField7"
