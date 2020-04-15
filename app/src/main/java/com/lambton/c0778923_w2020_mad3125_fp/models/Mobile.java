@@ -19,5 +19,23 @@ public class Mobile {
         this.minuteUsed = minuteUsed;
     }
 
-    
+    public String getMobileModelName() {
+        return mobileModelName;
+    }
+
+    public String getPlanName() {
+        return planName;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public int getInternetGbUsed() {
+        return internetGbUsed;
+    }
+
+    public int getMinuteUsed() {
+        return minuteUsed;
+    }
 }
