@@ -97,7 +97,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
             android:autofillHints="@string/suffix"
-            android:entries="@array/suffixArray"
+            android:entries="@array/billArray"
             android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
