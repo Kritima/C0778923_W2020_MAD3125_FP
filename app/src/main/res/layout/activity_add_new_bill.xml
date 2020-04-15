@@ -13,19 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="50dp"
-            android:autofillHints="@string/suffix"
-            android:entries="@array/suffixArray"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
         <LinearLayout
             android:id="@+id/billId"
             android:layout_width="wrap_content"
@@ -103,6 +90,19 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
+        <Spinner
+            android:id="@+id/billType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:autofillHints="@string/suffix"
+            android:entries="@array/suffixArray"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billDate" />
+
         <LinearLayout
             android:id="@+id/billField7"
             android:layout_width="wrap_content"
@@ -113,7 +113,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroupGender">
+            app:layout_constraintTop_toBottomOf="@+id/billDate">
 
             <ImageView
                 android:id="@+id/imageViewBillField7"
