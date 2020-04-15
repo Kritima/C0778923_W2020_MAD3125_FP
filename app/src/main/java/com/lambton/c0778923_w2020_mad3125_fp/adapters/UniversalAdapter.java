@@ -11,25 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Universal;
 import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
-public class TextAdapter extends RecyclerView.Adapter<TextAdapter.TextViewHolder> {
+public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.TextViewHolder> {
 
-    private ArrayList<Customer> customerArrayList ;
+    private ArrayList<Universal> universalArrayList;
 
-    public Adapter(ArrayList<Customer> customerArray) {
-        this.customerArrayList = customerArray;
+    public UniversalAdapter(ArrayList<Customer> tArray) {
+        this.universalArrayList = customerArray;
     }
 
     @NonNull
     @Override
-    public TextAdapter.TextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UniversalAdapter.TextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View customerItem = layoutInflater.inflate(R.layout.item, parent, false);
-        TextAdapter.TextViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(customerItem);
+        View universalItem = layoutInflater.inflate(R.layout.item_universal, parent, false);
+        UniversalAdapter.TextViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(universlItem);
         return customerViewHolder;
     }
 
