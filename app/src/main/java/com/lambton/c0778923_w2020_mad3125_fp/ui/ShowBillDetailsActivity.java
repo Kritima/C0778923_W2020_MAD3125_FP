@@ -10,6 +10,7 @@ import android.os.Bundle;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillItemAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private RecyclerView rvBillItemList;
     private ArrayList<BillItem> billItemListArrayList;
     private BillItemAdapter billItemAdapter;
+    private ArrayList<Customer> customerListArrayList;
 
 
     @Override
@@ -27,6 +29,8 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String pos = intent.getStringExtra("POSITION_I_NEED");
+        Customer cus = customerListArrayList.get(Integer.parseInt(pos));
+
 
         populateBillItem();
         rvBillItemList = findViewById(R.id.recyclerviewBillItem);

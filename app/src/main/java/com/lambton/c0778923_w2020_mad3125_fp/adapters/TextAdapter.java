@@ -19,17 +19,17 @@ public class TextAdapter extends RecyclerView.Adapter<TextAdapter.TextViewHolder
 
     private ArrayList<Customer> customerArrayList ;
 
-    public CustomerAdapter(ArrayList<Customer> customerArray) {
+    public Adapter(ArrayList<Customer> customerArray) {
         this.customerArrayList = customerArray;
     }
 
     @NonNull
     @Override
-    public CustomerAdapter.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TextAdapter.TextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View customerItem = layoutInflater.inflate(R.layout.item_customer, parent, false);
-        CustomerAdapter.CustomerViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(customerItem);
+        View customerItem = layoutInflater.inflate(R.layout.item, parent, false);
+        TextAdapter.TextViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(customerItem);
         return customerViewHolder;
     }
 
@@ -57,13 +57,13 @@ public class TextAdapter extends RecyclerView.Adapter<TextAdapter.TextViewHolder
         return this.customerArrayList.size();
     }
 
-    public class CustomerViewHolder extends RecyclerView.ViewHolder {
+    public class TextViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtName;
+        public TextView txtField;
 
-        public CustomerViewHolder(@NonNull View itemView) {
+        public TextViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.txtName = (TextView) itemView.findViewById(R.id.name);
+            this.txtField = (TextView) itemView.findViewById(R.id.rvItem);
 
         }
     }
@@ -71,4 +71,3 @@ public class TextAdapter extends RecyclerView.Adapter<TextAdapter.TextViewHolder
 }
 
 
-}

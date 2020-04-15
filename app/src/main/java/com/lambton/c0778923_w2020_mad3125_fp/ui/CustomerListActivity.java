@@ -35,7 +35,6 @@ public class CustomerListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_list);
 
         processJson();
-       // populateCustomer();
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);
 
@@ -97,13 +96,5 @@ public class CustomerListActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
-    private void populateCustomer() {
-        customerListArrayList = new ArrayList<>();
-
-        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
-        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
-        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
-        customerListArrayList.add(new Customer("C004", "Kritima", "Kukreja", "kri@gmail.com"));
     }
 }

@@ -1,6 +1,7 @@
 package com.lambton.c0778923_w2020_mad3125_fp.adapters;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             public void onClick(View v) {
                 Customer cs = customerArrayList.get(position);
                 Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                intent.putExtra("POSITION_I_NEED", position);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("customerKey", cs);
+                //intent.putExtras(bundle);
                 holder.itemView.getContext().startActivity(intent);
 
             }
