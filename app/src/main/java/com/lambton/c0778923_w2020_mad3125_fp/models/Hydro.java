@@ -20,4 +20,12 @@ public class Hydro {
     public int getUnitConsumed() {
         return unitConsumed;
     }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
+
+    public void setUnitConsumed(int unitConsumed) {
+        this.unitConsumed = unitConsumed;
+    }
 }
