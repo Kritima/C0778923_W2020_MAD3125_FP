@@ -10,4 +10,14 @@ public class Mobile {
 
     public Mobile() {
     }
+
+    public Mobile(String mobileModelName, String planName, String mobileNumber, int internetGbUsed, int minuteUsed) {
+        this.mobileModelName = mobileModelName;
+        this.planName = planName;
+        this.mobileNumber = mobileNumber;
+        this.internetGbUsed = internetGbUsed;
+        this.minuteUsed = minuteUsed;
+    }
+
+    
 }
