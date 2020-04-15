@@ -1,5 +1,4 @@
-{
-  "customers": [
+[
     {
       "id": "c200",
       "fname": "Ravi",
@@ -81,4 +80,3 @@
       "gender" : "female"
       }
   ]
-}

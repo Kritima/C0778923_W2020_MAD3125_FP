@@ -1,13 +1,21 @@
 package com.lambton.c0778923_w2020_mad3125_fp.models;
 
+import java.util.ArrayList;
+
 public class Customer {
 
     private String id;
     private String fName;
     private String lName;
     private String email;
+    private ArrayList<Customer> customerArrayList;
 
     public Customer() {
+        this.id = "";
+        this.fName = "";
+        this.lName = "";
+        this.email = "";
+        customerArrayList = new ArrayList<Customer>();
     }
 
     public Customer(String id, String fName, String lName, String email) {
@@ -39,5 +47,13 @@ public class Customer {
 
     public String getEmail() {
         return email;
+    }
+
+    public ArrayList<Customer> getCustomerArrayList() {
+        return customerArrayList;
+    }
+
+    public void setCustomerArrayList(ArrayList<Customer> customerArrayList) {
+        this.customerArrayList = customerArrayList;
     }
 }

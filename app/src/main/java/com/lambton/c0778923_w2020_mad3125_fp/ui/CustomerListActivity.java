@@ -83,7 +83,7 @@ public class CustomerListActivity extends AppCompatActivity {
                 for(int i=0; i<jsonArray.length();i++)
                 {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    if(jsonObject.has("customers"))
+                    if(jsonObject.has("id"))
                     {
                         String id = jsonObject.getString("id");
                         String fname = jsonObject.getString("fname");
@@ -92,6 +92,7 @@ public class CustomerListActivity extends AppCompatActivity {
                         customerListArrayList.add(new Customer(id,fname,lname,email));
                     }
                 }
+                c.setCustomerArrayList(customerListArrayList);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
