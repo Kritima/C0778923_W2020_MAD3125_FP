@@ -12,4 +12,20 @@ public class Bill {
         this.billDate = billDate;
         this.billType = billType;
     }
+
+    public String getBillId() {
+        return billId;
+    }
+
+    public String getBillDate() {
+        return billDate;
+    }
+
+    public String getBillType() {
+        return billType;
+    }
+
+    public Double getTotalBillAmount() {
+        return totalBillAmount;
+    }
 }
