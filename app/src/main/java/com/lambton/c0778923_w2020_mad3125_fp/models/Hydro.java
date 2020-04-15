@@ -12,4 +12,12 @@ public class Hydro {
         this.agencyName = agencyName;
         this.unitConsumed = unitConsumed;
     }
+
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public int getUnitConsumed() {
+        return unitConsumed;
+    }
 }
