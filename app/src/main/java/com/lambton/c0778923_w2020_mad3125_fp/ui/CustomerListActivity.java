@@ -11,6 +11,7 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import org.json.JSONArray;
@@ -88,7 +89,7 @@ public class CustomerListActivity extends AppCompatActivity {
                         String fname = jsonObject.getString("fname");
                         String lname = jsonObject.getString("lname");
                         String email = jsonObject.getString("email");
-                        customerListArrayList.add(new Customer(id,fname,lname,email));
+                        customerListArrayList.add(new Customer(id,fname,lname,email,new Bill());
                     }
                 }
                 c.setCustomerArrayList(customerListArrayList);

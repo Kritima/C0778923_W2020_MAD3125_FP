@@ -5,7 +5,15 @@
       "lname": "Tamada",
       "email": "ravi@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male"
+      "gender" : "male",
+      "hydrobill":
+        {
+          "bid": "HYDB0001",
+          "date": "Monday, 9 February, 2020",
+          "type": "Hydro",
+          "agencyname": "Planet Energy",
+          "unitconsumed": 29
+        }
     },
     {
       "id": "c201",

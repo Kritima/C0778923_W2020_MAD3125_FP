@@ -3,7 +3,7 @@ package com.lambton.c0778923_w2020_mad3125_fp.models;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer implements Serializable {
+public class Customer extends Bill implements Serializable {
 
     private String id;
     private String fName;
