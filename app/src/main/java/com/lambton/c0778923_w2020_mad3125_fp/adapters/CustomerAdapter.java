@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.CustomerViewHolder> {
 
-    private ArrayList<Customer> customerArrayList = null;
+    private ArrayList<Customer> customerArrayList ;
 
     public CustomerAdapter(ArrayList<Customer> customerArray) {
         this.customerArrayList = customerArray;
@@ -44,9 +44,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             public void onClick(View v) {
                 Customer cs = customerArrayList.get(position);
                 Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                //Bundle bundle = new Bundle();
-               // bundle.putSerializable("attractionsKey", ca);
-                //intent.putExtras(bundle);
+                intent.putExtra("POSITION_I_NEED", position);
                 holder.itemView.getContext().startActivity(intent);
 
             }

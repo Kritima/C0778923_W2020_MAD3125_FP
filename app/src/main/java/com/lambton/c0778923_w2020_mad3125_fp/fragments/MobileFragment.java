@@ -13,24 +13,18 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.models.MobileViewModel;
 
 public class MobileFragment extends Fragment {
 
-    private MobileViewModel mobileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mobileViewModel =
-                ViewModelProviders.of(this).get(MobileViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_mobile, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
-        mobileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+                textView.setText("");
+
         return root;
     }
 }

@@ -7,30 +7,26 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.models.HydroViewModel;
 
 public class HydroFragment extends Fragment {
 
-    private HydroViewModel hydroViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        hydroViewModel =
-                ViewModelProviders.of(this).get(HydroViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_hydro, container, false);
-        final TextView textView = root.findViewById(R.id.text_hydro);
-        hydroViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        final TextView textViewHydroOne = root.findViewById(R.id.hydroField1);
+        final TextView textViewHydroTwo = root.findViewById(R.id.hydroField2);
+        final TextView textViewHydroThree = root.findViewById(R.id.hydroField3);
+        final TextView textViewHydroFour = root.findViewById(R.id.hydroField4);
+        final TextView textViewHydroFive = root.findViewById(R.id.hydroField5);
+
+
+        textViewHydroOne.setText("hi");
+
         return root;
     }
 }

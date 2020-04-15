@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
@@ -23,6 +24,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
+
+        Intent intent = getIntent();
+        String pos = intent.getStringExtra("POSITION_I_NEED");
 
         populateBillItem();
         rvBillItemList = findViewById(R.id.recyclerviewBillItem);
