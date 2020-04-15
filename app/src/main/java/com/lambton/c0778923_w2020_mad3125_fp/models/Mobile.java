@@ -38,4 +38,24 @@ public class Mobile {
     public int getMinuteUsed() {
         return minuteUsed;
     }
+
+    public void setMobileModelName(String mobileModelName) {
+        this.mobileModelName = mobileModelName;
+    }
+
+    public void setPlanName(String planName) {
+        this.planName = planName;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public void setInternetGbUsed(int internetGbUsed) {
+        this.internetGbUsed = internetGbUsed;
+    }
+
+    public void setMinuteUsed(int minuteUsed) {
+        this.minuteUsed = minuteUsed;
+    }
 }
