@@ -7,4 +7,9 @@ public class Internet {
 
     public Internet() {
     }
+
+    public Internet(String providerName, int internetGbUsed) {
+        this.providerName = providerName;
+        this.internetGbUsed = internetGbUsed;
+    }
 }
