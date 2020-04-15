@@ -1,6 +1,6 @@
 package com.lambton.c0778923_w2020_mad3125_fp.models;
 
-public class Internet {
+public class Internet extends Bill {
 
     private String providerName;
     private int internetGbUsed;

@@ -1,6 +1,6 @@
 package com.lambton.c0778923_w2020_mad3125_fp.models;
 
-public class Hydro {
+public class Hydro extends Bill {
 
     private String agencyName;
     private int unitConsumed;

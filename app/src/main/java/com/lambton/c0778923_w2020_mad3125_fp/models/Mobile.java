@@ -1,6 +1,6 @@
 package com.lambton.c0778923_w2020_mad3125_fp.models;
 
-public class Mobile {
+public class Mobile extends Bill{
 
     private String mobileModelName;
     private String planName;

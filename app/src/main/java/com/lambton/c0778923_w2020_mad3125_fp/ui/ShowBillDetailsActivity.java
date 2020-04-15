@@ -2,6 +2,7 @@ package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -33,7 +34,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
 
-         customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
+        customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
 
         populateBillItem();
         populateCustomerDetails();
@@ -49,23 +50,25 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         rvBillItemList.setLayoutManager(mLayoutManager);
         rvBillItemList.setAdapter(billItemAdapter);
 
-        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(universalAdapter);
     }
 
     private void populateBillItem() {
         billItemListArrayList = new ArrayList<>();
 
-        billItemListArrayList.add(new BillItem("Hydro Bill",R.drawable.water));
-        billItemListArrayList.add(new BillItem("Mobile Bill",R.drawable.smartphone));
-        billItemListArrayList.add(new BillItem("Internet Bill",R.drawable.wifi));
-        billItemListArrayList.add(new BillItem("Generate Pdf",R.drawable.pdf));
+        billItemListArrayList.add(new BillItem("Hydro Bill", R.drawable.water));
+        billItemListArrayList.add(new BillItem("Mobile Bill", R.drawable.smartphone));
+        billItemListArrayList.add(new BillItem("Internet Bill", R.drawable.wifi));
+        billItemListArrayList.add(new BillItem("Generate Pdf", R.drawable.pdf));
     }
 
     private void populateCustomerDetails() {
-       universals = new ArrayList<>();
+        universals = new ArrayList<>();
 
-      universals.add(new Universal(customer.getId()));
+        //universals.add(new Universal("Customer Id : " + customer.getId()));
+        universals.add(new Universal("Customer Name : " + customer.fullName()));
+       // universals.add(new Universal("Customer Email : " + customer.getEmail()));
     }
 
 }
