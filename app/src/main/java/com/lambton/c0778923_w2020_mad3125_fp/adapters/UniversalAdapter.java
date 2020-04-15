@@ -16,55 +16,44 @@ import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
-public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.TextViewHolder> {
+public class UniversalAdapter extends RecyclerView.Adapter<UniversalAdapter.UniversalViewHolder> {
 
     private ArrayList<Universal> universalArrayList;
 
-    public UniversalAdapter(ArrayList<Customer> tArray) {
-        this.universalArrayList = customerArray;
+    public UniversalAdapter(ArrayList<Universal> universalArrayList) {
+        this.universalArrayList = universalArrayList;
     }
 
     @NonNull
     @Override
-    public UniversalAdapter.TextViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UniversalAdapter.UniversalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View universalItem = layoutInflater.inflate(R.layout.item_universal, parent, false);
-        UniversalAdapter.TextViewHolder customerViewHolder = new CustomerAdapter.CustomerViewHolder(universlItem);
-        return customerViewHolder;
+        UniversalAdapter.UniversalViewHolder universalViewHolder = new UniversalAdapter.UniversalViewHolder(universalItem);
+        return universalViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CustomerAdapter.CustomerViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final UniversalAdapter.UniversalViewHolder holder, final int position) {
 
-        Customer cus = this.customerArrayList.get(position);
-        holder.txtName.setText(cus.fullName());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Customer cs = customerArrayList.get(position);
-                Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                intent.putExtra("POSITION_I_NEED", position);
-                holder.itemView.getContext().startActivity(intent);
-
-            }
-        });
+        Universal uni = this.universalArrayList.get(position);
+        holder.txtUniversal.setText(uni.getUniversal());
 
     }
 
     @Override
     public int getItemCount() {
-        return this.customerArrayList.size();
+        return this.universalArrayList.size();
     }
 
-    public class TextViewHolder extends RecyclerView.ViewHolder {
+    public class UniversalViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtField;
+        public TextView txtUniversal;
 
-        public TextViewHolder(@NonNull View itemView) {
+        public UniversalViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.txtField = (TextView) itemView.findViewById(R.id.rvItem);
+            this.txtUniversal = (TextView) itemView.findViewById(R.id.universalTextView);
 
         }
     }

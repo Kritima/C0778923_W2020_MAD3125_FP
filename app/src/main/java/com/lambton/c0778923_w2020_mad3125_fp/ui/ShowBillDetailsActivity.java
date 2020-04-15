@@ -11,6 +11,7 @@ import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillItemAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Universal;
 
 import java.util.ArrayList;
 
@@ -19,8 +20,8 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     Customer customer;
     private RecyclerView rvBillItemList;
     private ArrayList<BillItem> billItemListArrayList;
+    private ArrayList<Universal> universals;
     private BillItemAdapter billItemAdapter;
-    private ArrayList<Customer> customerListArrayList;
 
 
     @Override
@@ -45,6 +46,12 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         billItemListArrayList.add(new BillItem("Mobile Bill",R.drawable.smartphone));
         billItemListArrayList.add(new BillItem("Internet Bill",R.drawable.wifi));
         billItemListArrayList.add(new BillItem("Generate Pdf",R.drawable.pdf));
+    }
+
+    private void populateCustomerDetails() {
+       universals = new ArrayList<>();
+
+      universals.add(new Universal(customer.getId()));
     }
 
 }
