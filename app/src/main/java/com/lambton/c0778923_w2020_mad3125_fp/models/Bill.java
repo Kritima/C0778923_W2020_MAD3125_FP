@@ -28,4 +28,20 @@ public class Bill {
     public Double getTotalBillAmount() {
         return totalBillAmount;
     }
+
+    public void setBillId(String billId) {
+        this.billId = billId;
+    }
+
+    public void setBillDate(String billDate) {
+        this.billDate = billDate;
+    }
+
+    public void setBillType(String billType) {
+        this.billType = billType;
+    }
+
+    public void setTotalBillAmount(Double totalBillAmount) {
+        this.totalBillAmount = totalBillAmount;
+    }
 }
