@@ -85,7 +85,7 @@
                     android:id="@+id/billDateTextInputEditText"
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
-                    android:hint="Birth Date" />
+                    android:hint="Select Bill Date" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

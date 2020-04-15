@@ -19,4 +19,10 @@
     <string name="title_mobile">Mobile</string>
     <string name="title_internet">Internet</string>
 
+    <string-array name="billArray">
+        <item>Hydro</item>
+        <item>Internet</item>
+        <item>Mobile</item>
+    </string-array>
+
 </resources>
