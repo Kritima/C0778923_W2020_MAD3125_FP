@@ -7,6 +7,9 @@ public class Bill {
     private String billType;
     private  Double totalBillAmount;
 
+    public Bill() {
+    }
+
     public Bill(String billId, String billDate, String billType) {
         this.billId = billId;
         this.billDate = billDate;
