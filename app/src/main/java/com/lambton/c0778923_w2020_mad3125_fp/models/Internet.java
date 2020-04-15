@@ -4,4 +4,7 @@ public class Internet {
 
     private String providerName;
     private int internetGbUsed;
+
+    public Internet() {
+    }
 }
