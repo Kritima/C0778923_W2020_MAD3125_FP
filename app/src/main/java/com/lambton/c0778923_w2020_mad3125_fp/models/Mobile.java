@@ -8,5 +8,6 @@ public class Mobile {
     private int internetGbUsed;
     private int minuteUsed;
 
-    
+    public Mobile() {
+    }
 }
