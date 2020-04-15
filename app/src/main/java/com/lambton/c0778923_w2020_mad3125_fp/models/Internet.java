@@ -20,4 +20,12 @@ public class Internet {
     public int getInternetGbUsed() {
         return internetGbUsed;
     }
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    public void setInternetGbUsed(int internetGbUsed) {
+        this.internetGbUsed = internetGbUsed;
+    }
 }
