@@ -8,7 +8,7 @@
     tools:context=".ui.LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewLogin"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="32dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/bitcoin" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextPassword"
             android:layout_width="318dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -51,18 +51,19 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonLogin"
             android:layout_width="117dp"
             android:layout_height="49dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="65dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/log_in"
+            android:text="Login"
+            android:background="@drawable/rounded_rectangle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
