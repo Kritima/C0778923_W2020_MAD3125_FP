@@ -38,15 +38,23 @@ public class LoginActivity extends AppCompatActivity {
         rememberMe = findViewById(R.id.checkBoxRemember);
 
         sharedPreferences=getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        String loginprefs = sharedPreferences.getString("remember","");
+
+
+
         editor=sharedPreferences.edit();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
-                startActivity(intent);
+                if (email.getText().toString().equals("admin@123") &&
+                        password.getText().toString().equals("s3cr3t")) {
 
+                    Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                    startActivity(intent);
+
+                }
             }
         });
 
@@ -54,7 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if (rememberMe.isChecked()) {
+                if (rememberMe.isChecked() && (email.getText().toString().equals("admin@123") &&
+                        password.getText().toString().equals("s3cr3t"))) {
                     editor.putString("email", email.getText().toString());
                     editor.putString("password", password.getText().toString());
                     editor.apply();
