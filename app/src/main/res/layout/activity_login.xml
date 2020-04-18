@@ -3,8 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/app_color"
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bitcoin" />
 
     <EditText
         android:id="@+id/editText"
@@ -14,12 +25,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="Message Pizzy"
+        android:hint="Email"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColorHint="@color/gray"
         app:layout_constraintHorizontal_bias="0.459"
         android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
         android:ems="10"
@@ -49,20 +60,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="65dp"
             android:layout_marginEnd="16dp"
-            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
             android:text="@string/log_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bitcoin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

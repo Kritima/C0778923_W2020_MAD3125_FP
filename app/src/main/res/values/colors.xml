@@ -6,4 +6,5 @@
     <color name="app_color">#F8C120</color>
     <color name="basic">#F1F1F1</color>
     <color name="text">#3c3c3c</color>
+    <color name="gray">#e6e7e8</color>
 </resources>
