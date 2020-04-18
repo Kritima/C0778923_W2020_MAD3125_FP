@@ -90,7 +90,7 @@ public class CustomerListActivity extends AppCompatActivity {
                         String fname = jsonObject.getString("fname");
                         String lname = jsonObject.getString("lname");
                         String email = jsonObject.getString("email");
-                        customerListArrayList.add(new Customer(id,fname,lname,email);
+                        customerListArrayList.add(new Customer(id,fname,lname,email));
                     }
                 }
                 c.setCustomerArrayList(customerListArrayList);

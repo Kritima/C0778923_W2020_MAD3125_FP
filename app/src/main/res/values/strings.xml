@@ -18,6 +18,10 @@
     <string name="title_hydro">Hydro</string>
     <string name="title_mobile">Mobile</string>
     <string name="title_internet">Internet</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
 
     <string-array name="billArray">
         <item>Hydro</item>

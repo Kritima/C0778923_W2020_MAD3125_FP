@@ -18,14 +18,14 @@ public class HydroFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_hydro, container, false);
-        final TextView textViewHydroOne = root.findViewById(R.id.hydroField1);
-        final TextView textViewHydroTwo = root.findViewById(R.id.hydroField2);
-        final TextView textViewHydroThree = root.findViewById(R.id.hydroField3);
-        final TextView textViewHydroFour = root.findViewById(R.id.hydroField4);
-        final TextView textViewHydroFive = root.findViewById(R.id.hydroField5);
+       // final TextView textViewHydroOne = root.findViewById(R.id.hydroField1);
+        //final TextView textViewHydroTwo = root.findViewById(R.id.hydroField2);
+       // final TextView textViewHydroThree = root.findViewById(R.id.hydroField3);
+       // final TextView textViewHydroFour = root.findViewById(R.id.hydroField4);
+     //  final TextView textViewHydroFive = root.findViewById(R.id.hydroField5);
 
 
-        textViewHydroOne.setText("hi");
+      //  textViewHydroOne.setText("hi");
 
         return root;
     }
