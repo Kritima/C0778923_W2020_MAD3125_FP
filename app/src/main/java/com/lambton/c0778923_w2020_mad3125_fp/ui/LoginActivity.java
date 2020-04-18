@@ -39,6 +39,16 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPreferences=getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         editor=sharedPreferences.edit();
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 }
 
