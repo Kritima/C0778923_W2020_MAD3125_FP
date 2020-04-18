@@ -11,6 +11,7 @@ public class Customer extends Bill implements Serializable {
     private String email;
     private ArrayList<Customer> customerArrayList;
 
+
     public Customer() {
         this.id = "";
         this.fName = "";

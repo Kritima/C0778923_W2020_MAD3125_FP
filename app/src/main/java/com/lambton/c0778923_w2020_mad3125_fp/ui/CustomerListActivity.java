@@ -80,6 +80,7 @@ public class CustomerListActivity extends AppCompatActivity {
             try {
                 JSONArray jsonArray = new JSONArray(js);
                 customerListArrayList = new ArrayList<>();
+
                 for(int i=0; i<jsonArray.length();i++)
                 {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -89,7 +90,7 @@ public class CustomerListActivity extends AppCompatActivity {
                         String fname = jsonObject.getString("fname");
                         String lname = jsonObject.getString("lname");
                         String email = jsonObject.getString("email");
-                        customerListArrayList.add(new Customer(id,fname,lname,email,new Bill());
+                        customerListArrayList.add(new Customer(id,fname,lname,email);
                     }
                 }
                 c.setCustomerArrayList(customerListArrayList);
