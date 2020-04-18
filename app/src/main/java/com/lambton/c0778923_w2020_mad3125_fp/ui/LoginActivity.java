@@ -1,5 +1,6 @@
 package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -32,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         login = findViewById(R.id.buttonLogin);
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
@@ -43,21 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         if (loginprefs.equals("true")) {
             Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
             startActivity(intent);
-        }
-        else {
-
-            builder.setMessage("User ID Password Invalid")
-                    .setCancelable(false)
-                    .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-
-                        }
-                    });
-
-            AlertDialog alert = builder.create();
-            alert.setTitle("Error");
-            alert.show();
         }
 
 
@@ -112,5 +101,5 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    
+
 
