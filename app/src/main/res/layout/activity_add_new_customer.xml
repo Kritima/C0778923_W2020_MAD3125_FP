@@ -27,7 +27,7 @@ tools:context=".ui.AddNewCustomerActivity">
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/Name"
+        android:id="@+id/firstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -38,9 +38,8 @@ tools:context=".ui.AddNewCustomerActivity">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner">
 
-
         <ImageView
-            android:id="@+id/imageViewName"
+            android:id="@+id/imageViewFirstName"
             android:layout_width="40dp"
             android:paddingLeft="10dp"
             android:layout_height="match_parent"
@@ -48,23 +47,40 @@ tools:context=".ui.AddNewCustomerActivity">
             app:srcCompat="@drawable/ic_person_black_24dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/NameTextInputLayout"
+            android:id="@+id/firstNameTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            app:helperTextEnabled="true"
-            app:errorEnabled="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/NameTextInputEditText"
+                android:id="@+id/firstNameTextInputEditText"
                 android:layout_width="330dp"
-                android:layout_height="match_parent"
-                android:hint="Enter Full Name" />
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastNameTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/firstName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/lastNameTextInputEditText"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/city" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <RadioGroup
@@ -75,28 +91,28 @@ tools:context=".ui.AddNewCustomerActivity">
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name">
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextInputLayout">
 
         <RadioButton
             android:id="@+id/radioButtonMale"
             android:buttonTint="@color/basic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:text="@string/male" />
 
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/basic"
-            android:text="Female" />
+            android:text="@string/female" />
 
         <RadioButton
             android:id="@+id/radioButtonOther"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/basic"
-            android:text="Other" />
+            android:text="@string/other" />
     </RadioGroup>
 
     <LinearLayout
@@ -132,7 +148,7 @@ tools:context=".ui.AddNewCustomerActivity">
                 android:id="@+id/AddressTextInputEditText"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:hint="Address" />
+                android:hint="@string/address" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
@@ -151,7 +167,7 @@ tools:context=".ui.AddNewCustomerActivity">
             android:id="@+id/CityTextInputEditText"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:hint="City" />
+            android:hint="@string/city" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,7 +194,7 @@ tools:context=".ui.AddNewCustomerActivity">
                 android:id="@+id/ProvinceTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Province" />
+                android:hint="@string/province" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -231,44 +247,7 @@ tools:context=".ui.AddNewCustomerActivity">
                 android:id="@+id/EmailTextInputEditText"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:hint="Email" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/birthDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email">
-
-        <ImageView
-            android:id="@+id/imageViewBirthDate"
-            android:layout_width="40dp"
-            android:paddingLeft="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_date_range_black_24dp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/birthDateTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/birthDateTextInputEditText"
-                android:layout_width="330dp"
-                android:layout_height="wrap_content"
-                android:hint="Birth Date" />
+                android:hint="@string/email" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
@@ -283,14 +262,14 @@ tools:context=".ui.AddNewCustomerActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthDate">
+        app:layout_constraintTop_toBottomOf="@+id/Email">
 
         <Button
             android:id="@+id/btnSubmit"
             style=" @style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add" />
+            android:text="@string/add" />
 
     </LinearLayout>
 
