@@ -49,6 +49,24 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (rememberMe.isChecked()) {
+                    editor.putString("email", email.getText().toString());
+                    editor.putString("password", password.getText().toString());
+                    editor.apply();
+
+                } else {
+                    editor.putString("email", "");
+                    editor.putString("password", "");
+                    editor.commit();
+                }
+            }
+        });
+
     }
 }
 
