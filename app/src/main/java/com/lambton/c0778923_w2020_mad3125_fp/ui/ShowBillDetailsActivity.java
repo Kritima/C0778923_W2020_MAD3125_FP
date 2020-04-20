@@ -36,6 +36,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         mActionBar.setTitle("YOUR BILLS");
 
         Intent mIntent = getIntent();
+        //customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
         final Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
         billsArrayListDetail = customerObj.getBills();
 
