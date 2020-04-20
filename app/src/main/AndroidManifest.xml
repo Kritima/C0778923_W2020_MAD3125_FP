@@ -9,24 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DetailedBillActivity"></activity>
         <activity android:name=".ui.AddNewBillActivity">
-        </activity>
-        <activity
-            android:name=".ui.ShowBillActivity"
-            android:label="@string/title_activity_show_bill" />
-        <activity android:name=".ui.AddNewCustomerActivity" />
-        <activity android:name=".ui.ShowBillDetailsActivity" />
-        <activity android:name=".ui.CustomerListActivity">
-        </activity>
-        <activity android:name=".ui.SplashActivity" />
-        <activity android:name=".ui.AboutUsActivity" />
-        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.ShowBillActivity"
+            android:label="@string/title_activity_show_bill" />
+        <activity android:name=".ui.AddNewCustomerActivity" />
+        <activity android:name=".ui.ShowBillDetailsActivity" />
+        <activity android:name=".ui.CustomerListActivity"></activity>
+        <activity android:name=".ui.SplashActivity" />
+        <activity android:name=".ui.AboutUsActivity" />
+        <activity android:name=".ui.LoginActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

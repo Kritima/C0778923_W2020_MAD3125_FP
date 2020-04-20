@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -36,9 +37,7 @@ public class AddNewBillActivity extends AppCompatActivity {
     TextInputEditText billField3;
     TextInputEditText billField4;
     TextInputEditText billField5;
-    TextInputEditText billField6;
-    TextInputEditText billField7;
-    TextInputEditText billField8;
+    LinearLayout l1,l2,l3,l4,l5;
     Button addBill;
     DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -58,87 +57,84 @@ public class AddNewBillActivity extends AppCompatActivity {
         billField3 = findViewById(R.id.billField3TextInputEditText);
         billField4 = findViewById(R.id.billField4TextInputEditText);
         billField5 = findViewById(R.id.billField5TextInputEditText);
-        billField6 = findViewById(R.id.billField6TextInputEditText);
-        billField7 = findViewById(R.id.billField7TextInputEditText);
-        billField8 = findViewById(R.id.billField8TextInputEditText);
+        l1 = findViewById(R.id.billField1);
+        l2 = findViewById(R.id.billField2);
+        l3 = findViewById(R.id.billField3);
+        l4 = findViewById(R.id.billField4);
+        l5 = findViewById(R.id.billField5);
+        addBill = findViewById(R.id.btnAddBill);
 
-        billDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dialog = new DatePickerDialog(
-                        AddNewBillActivity.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                Calendar cal = Calendar.getInstance();
-                cal.set(year, month, day);
-                billDate.setText(new SimpleDateFormat("dd-MMM-yyyy").format(cal.getTime()).toUpperCase());
-            }
-        };
-
-        hidefields();
         if (billType.getSelectedItem().toString() == "HYDRO") {
             billField1.setVisibility(View.VISIBLE);
             billField2.setVisibility(View.VISIBLE);
+            billField3.setVisibility(View.GONE);
             billField1.setHint("ENTER AGENCY NAME");
             billField2.setHint("ENTER UNITS CONSUMED");
+        }
+        else if (billType.getSelectedItem().toString() == "INTERNET") {
+
+           l1.setVisibility(View.VISIBLE);
+            l2.setVisibility(View.VISIBLE);
+            l3.setVisibility(View.INVISIBLE);
+            l4.setVisibility(View.INVISIBLE);
+            l5.setVisibility(View.INVISIBLE);
+            billField1.setHint("ENTER PROVIDER NAME");
+            billField2.setHint("ENTER DATA USED");
+        }
+
+        else if (billType.getSelectedItem().toString() == "MOBILE")
+        {
+
+            l1.setVisibility(View.VISIBLE);
+            l2.setVisibility(View.VISIBLE);
+            l3.setVisibility(View.VISIBLE);
+            l4.setVisibility(View.VISIBLE);
+            l5.setVisibility(View.VISIBLE);
+            billField1.setHint("enter the manufacturer");
+            billField2.setHint("enter your plan name");
+        }
 
             addBill.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     boolean someFlag = false;
-                    if (billId.getText().toString().isEmpty()) {
-                        billId.setError("Please enter the bill ID");
-                        someFlag = true;
-                        return;
-                    }
-                    if (billDate.getText().toString().isEmpty()) {
-                        billDate.setError("Please enter your the bill date");
-                        someFlag = true;
-                        return;
-                    }
-                    if(billField2.getText().toString().isEmpty())
-                    {
-                        billField2.setError("Please enter the units consumed");
-                        someFlag = true;
-                        return;
-                    }
-                    if(billField2.getText().toString().isEmpty())
-                    {
-                        billField2.setError("Please enter the agency");
-                        someFlag = true;
-                        return;
-                    }
-                    if(!billId.getText().toString().contains("HY"))
-                    {
-                        new MaterialAlertDialogBuilder(AddNewBillActivity.this)
-                                .setTitle("Invalid bill ID")
-                                .setMessage("Hydro bill IDs must contain HY")
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.dismiss();
-                                    }
-                                })
-                                .show();
-                        someFlag = true;
-                        return;
-                    }
+                    if (billType.getSelectedItem().toString() == "HYDRO") {
+                        if (billId.getText().toString().isEmpty()) {
+                            billId.setError("Please enter the bill ID");
+                            someFlag = true;
+                            return;
+                        }
+                        if (billDate.getText().toString().isEmpty()) {
+                            billDate.setError("Please enter your the bill date");
+                            someFlag = true;
+                            return;
+                        }
+                        if (billField2.getText().toString().isEmpty()) {
+                            billField2.setError("Please enter the units consumed");
+                            someFlag = true;
+                            return;
+                        }
+                        if (billField2.getText().toString().isEmpty()) {
+                            billField2.setError("Please enter the agency");
+                            someFlag = true;
+                            return;
+                        }
+                        if (!billId.getText().toString().contains("HY")) {
+                            new MaterialAlertDialogBuilder(AddNewBillActivity.this)
+                                    .setTitle("Invalid bill ID")
+                                    .setMessage("Hydro bill IDs must contain HY")
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    })
+                                    .show();
+                            someFlag = true;
+                            return;
+                        }
                    /* if(!someFlag) {
                         Hydro hObj = new Hydro(billId.getText().toString(),
                                 HelperMethods.getInstance().stringToDate(edtBillDateText.getText().toString()),
@@ -150,19 +146,8 @@ public class AddNewBillActivity extends AppCompatActivity {
                         mIntent.putExtra("CustomerBills", customerObj2);
                         startActivity(mIntent);
                     }*/
-                }
-            });
-        }
-        else if (billType.getSelectedItem().toString() == "INTERNET") {
-
-                billField1.setVisibility(View.VISIBLE);
-                billField2.setVisibility(View.VISIBLE);
-                billField1.setHint("ENTER PROVIDER NAME");
-                billField2.setHint("ENTER DATA USED");
-                addBill.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean someFlag = false;
+                    }
+                    else if (billType.getSelectedItem().toString() == "INTERNET") {
                         if(billId.getText().toString().isEmpty())
                         {
                             billId.setError("Please enter the bill ID");
@@ -212,22 +197,9 @@ public class AddNewBillActivity extends AppCompatActivity {
                         mIntent.putExtra("CustomerBills", customerObj2);
                         startActivity(mIntent);*/
                     }
-                });
-        }
-        else {
 
-            billField1.setVisibility(View.VISIBLE);
-            billField2.setVisibility(View.VISIBLE);
-            billField3.setVisibility(View.VISIBLE);
-            billField4.setVisibility(View.VISIBLE);
-            billField5.setVisibility(View.VISIBLE);
-            billField1.setHint("enter the manufacturer");
-            billField2.setHint("enter your plan name");
-
-            addBill.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    boolean someFlag = false;
+          else if (billType.getSelectedItem().toString() == "MOBILE")
+                {
                     if (billId.getText().toString().isEmpty()) {
                         billId.setError("Please enter the bill ID");
                         someFlag = true;
@@ -294,24 +266,42 @@ public class AddNewBillActivity extends AppCompatActivity {
                     }*/
 
                 }
-            });
+            }
 
 
-        }
+        });
+
+        billDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        AddNewBillActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                Calendar cal = Calendar.getInstance();
+                cal.set(year, month, day);
+                billDate.setText(new SimpleDateFormat("dd-MMM-yyyy").format(cal.getTime()).toUpperCase());
+            }
+        };
 
     }
 
-
-
-            public void hidefields()
-            {
-                billField1.setVisibility(View.INVISIBLE);
-                billField2.setVisibility(View.INVISIBLE);
-                billField3.setVisibility(View.INVISIBLE);
-                billField4.setVisibility(View.INVISIBLE);
-                billField5.setVisibility(View.INVISIBLE);
-                billField6.setVisibility(View.INVISIBLE);
-            }
 
 }
 

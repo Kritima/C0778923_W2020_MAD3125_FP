@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.fragments.HydroFragment;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
+import com.lambton.c0778923_w2020_mad3125_fp.ui.AddNewBillActivity;
 import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillActivity;
 
 import java.util.ArrayList;
