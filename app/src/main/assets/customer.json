@@ -70,21 +70,5 @@
       "email": "clint_eastwood@gmail.com",
       "address": "xx-xx-xxxx,x - street, x - country",
       "gender" : "male"
-    },
-    {
-      "id": "c2010",
-      "fname": "Barack",
-      "lname": "Obama",
-      "email": "barack_obama@gmail.com",
-      "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "male"
-    },
-    {
-      "id": "c2011",
-      "fname": "Kate",
-      "lname": "Winslet",
-      "email": "kate_winslet@gmail.com",
-      "address": "xx-xx-xxxx,x - street, x - country",
-      "gender" : "female"
-      }
+    }
   ]

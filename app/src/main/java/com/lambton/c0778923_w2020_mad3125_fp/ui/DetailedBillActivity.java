@@ -59,6 +59,8 @@ public class DetailedBillActivity extends AppCompatActivity {
             if (billObj.getBillId().contains("MB")) {
                 Mobile m = (Mobile) billObj;
                 txtFragBillId.setText(m.getBillId());
+                txtFragBillDate.setText(m.getBillDate());
+                txtFragBillAmount.setText(m.getTotalBillAmount().toString());
             }
             if (billObj.getBillId().contains("HY")) {
                 Hydro h = (Hydro) billObj;
@@ -76,12 +78,14 @@ public class DetailedBillActivity extends AppCompatActivity {
             if(billObj.getBillId().contains("IN")) {
                 Internet i = (Internet) billObj;
                 txtFragBillId.setText(i.getBillId());
+                txtFragBillDate.setText(i.getBillDate());
+                txtFragBillAmount.setText(i.getTotalBillAmount().toString());
             }
 
             btnHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(DetailedBillActivity.this, CustomerList.class);
+                    Intent intent = new Intent(DetailedBillActivity.this, CustomerListActivity.class);
                     startActivity(intent);
                 }
             });

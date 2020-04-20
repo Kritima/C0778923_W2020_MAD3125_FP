@@ -14,6 +14,17 @@ public class Internet extends Bill {
         this.internetGbUsed = internetGbUsed;
     }
 
+    public Double billCalculate(){
+        double billAmount = 0.0;
+        if( internetGbUsed < 10){
+            billAmount = 3 * internetGbUsed;
+        }
+        else {
+            billAmount = 3.5 * internetGbUsed;
+        }
+        return billAmount;
+    }
+
     public String getProviderName() {
         return providerName;
     }

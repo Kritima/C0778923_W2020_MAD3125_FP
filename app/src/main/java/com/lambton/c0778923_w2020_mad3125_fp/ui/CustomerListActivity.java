@@ -28,6 +28,7 @@ public class CustomerListActivity extends AppCompatActivity {
     public static ArrayList<Customer> customerListArrayList = new ArrayList<>();
     private CustomerAdapter customerAdapter;
     FloatingActionButton floatingActionButtonAddCustomer;
+    FloatingActionButton floatingActionButtonLogout;
     Customer c = new Customer();
 
     @Override
@@ -41,6 +42,7 @@ public class CustomerListActivity extends AppCompatActivity {
         }
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);
+        floatingActionButtonLogout = findViewById(R.id.floating_action_button_logout);
 
         customerAdapter = new CustomerAdapter(customerListArrayList);
         rvCustomerList.setLayoutManager(new LinearLayoutManager(this));
@@ -51,6 +53,16 @@ public class CustomerListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        floatingActionButtonLogout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CustomerListActivity.this, LoginActivity.class);
 
                 startActivity(intent);
             }
