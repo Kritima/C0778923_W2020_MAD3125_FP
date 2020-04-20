@@ -89,6 +89,9 @@ public class AddNewBillActivity extends AppCompatActivity {
             }
         };
 
+        if(billType.getSelectedItem().toString() == "Hydro")
+        {
+
         addBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,6 +170,16 @@ public class AddNewBillActivity extends AppCompatActivity {
                 }
 
     }
+
+            public void hidefields()
+            {
+                billField1.setVisibility(View.INVISIBLE);
+                billField2.setVisibility(View.INVISIBLE);
+                billField3.setVisibility(View.INVISIBLE);
+                billField4.setVisibility(View.INVISIBLE);
+                billField5.setVisibility(View.INVISIBLE);
+                billField6.setVisibility(View.INVISIBLE);
+            }
 
 }
 
@@ -344,49 +357,6 @@ public class AddNewBillActivity extends AppCompatActivity {
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
-    private void addingDatePicker()
-    {
-        edtBillDateText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        AddNewBillActivity.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day)
-            {
-                String date ="";
-                month = month + 1;
-                String monthName = getMonthName(month);
-                if(day<10) {
-                    date = "0"+day + "-" + monthName + "-" + year;
-                }
-                else
-                {
-                    date = day + "-" + monthName + "-" + year;
-                }
-                edtBillDateText.setText(date);
-            }
-        };
-    }
-
-    public static String getMonthName(int monthNumber){
-        String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
-        return monthNames[monthNumber-1];
-    }
     public void initFields()
     {
         edtMinsUsed.setVisibility(View.VISIBLE);
