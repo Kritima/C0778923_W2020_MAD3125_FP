@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Hydro;
 import com.lambton.c0778923_w2020_mad3125_fp.util.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
@@ -33,9 +35,10 @@ public class AddNewBillActivity extends AppCompatActivity {
     TextInputEditText billField3;
     TextInputEditText billField4;
     TextInputEditText billField5;
-    LinearLayout l1,l2,l3,l4,l5;
+    LinearLayout l1, l2, l3, l4, l5;
     Button addBill;
     DatePickerDialog.OnDateSetListener mDateSetListener;
+    Customer customerObj2;
 
 
     @Override
@@ -43,7 +46,7 @@ public class AddNewBillActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_bill);
 
-        Customer customerObj2;
+        customerObj2 = (Customer) getIntent().getExtras().getSerializable("CustomerBills");
 
         billType = findViewById(R.id.billType);
         billId = findViewById(R.id.billIdTextInputEditText);
@@ -103,96 +106,90 @@ public class AddNewBillActivity extends AppCompatActivity {
 
         });
 
-            addBill.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    boolean someFlag = false;
-                    if (billType.getSelectedItem().toString().equals("HYDRO")) {
-                        if (billId.getText().toString().isEmpty()) {
-                            billId.setError("Please enter the addbill ID");
-                            someFlag = true;
-                            return;
-                        }
-                        if (billDate.getText().toString().isEmpty()) {
-                            billDate.setError("Please enter your the addbill date");
-                            someFlag = true;
-                            return;
-                        }
-                        if (billField2.getText().toString().isEmpty()) {
-                            billField2.setError("Please enter the units consumed");
-                            someFlag = true;
-                            return;
-                        }
-                        if (billField2.getText().toString().isEmpty()) {
-                            billField2.setError("Please enter the agency");
-                            someFlag = true;
-                            return;
-                        }
-                        if (!billId.getText().toString().contains("HY")) {
-                            new MaterialAlertDialogBuilder(AddNewBillActivity.this)
-                                    .setTitle("Invalid addbill ID")
-                                    .setMessage("Hydro addbill IDs must contain HY")
-                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    })
-                                    .show();
-                            someFlag = true;
-                            return;
-                        }
-                   /* if(!someFlag) {
-                        Hydro hObj = new Hydro(billId.getText().toString(),
-                                HelperMethods.getInstance().stringToDate(edtBillDateText.getText().toString()),
-                                Bill.BillType.Hydro,
-                                edtAgencyNameText.getText().toString(),
-                                Integer.parseInt(edtUnitsUsedText.getText().toString()));
-                        customerObj2.getCustomerBills().put(hObj.getBillId(), hObj);
+        addBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean someFlag = false;
+                if (billType.getSelectedItem().toString().equals("HYDRO")) {
+                    if (billId.getText().toString().isEmpty()) {
+                        billId.setError("Please enter the addbill ID");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billDate.getText().toString().isEmpty()) {
+                        billDate.setError("Please enter your the addbill date");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billField2.getText().toString().isEmpty()) {
+                        billField2.setError("Please enter the units consumed");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billField2.getText().toString().isEmpty()) {
+                        billField2.setError("Please enter the agency");
+                        someFlag = true;
+                        return;
+                    }
+                    if (!billId.getText().toString().contains("HY")) {
+                        new MaterialAlertDialogBuilder(AddNewBillActivity.this)
+                                .setTitle("Invalid addbill ID")
+                                .setMessage("Hydro addbill IDs must contain HY")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .show();
+                        someFlag = true;
+                        return;
+                    }
+                    if (!someFlag) {
+                        Hydro hObj = new Hydro(billId.getText().toString(), billDate.getText().toString(),
+                                billType.getSelectedItem().toString(),
+                                billField1.getText().toString(),
+                                Integer.parseInt(billField2.getText().toString()));
+                        customerObj2.addBill(hObj.getBillId(), hObj);
                         Intent mIntent = new Intent(AddNewBillActivity.this, ShowBillDetailsActivity.class);
                         mIntent.putExtra("CustomerBills", customerObj2);
                         startActivity(mIntent);
-                    }*/
                     }
-                    else if (billType.getSelectedItem().toString().equals("INTERNET")) {
-                        if(billId.getText().toString().isEmpty())
-                        {
-                            billId.setError("Please enter the addbill ID");
-                            someFlag = true;
-                            return;
-                        }
-                        if(billDate.getText().toString().isEmpty()){
-                            billDate.setError("Please enter your the addbill text");
-                            someFlag = true;
-                            return;
-                        }
-                        if(billField1.getText().toString().isEmpty())
-                        {
-                            billField1.setError("Please enter the provider name");
-                            someFlag = true;
-                            return;
-                        }
-                        if(billField2.getText().toString().isEmpty())
-                        {
-                            billField2.setError("Please enter the data used");
-                            someFlag = true;
-                            return;
-                        }
-                        if(!billId.getText().toString().contains("IN"))
-                        {
-                            new MaterialAlertDialogBuilder(AddNewBillActivity.this)
-                                    .setTitle("Invalid addbill ID")
-                                    .setMessage("Hydro addbill IDs must contain IN")
-                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    })
-                                    .show();
-                            someFlag = true;
-                            return;
-                        }
+                } else if (billType.getSelectedItem().toString().equals("INTERNET")) {
+                    if (billId.getText().toString().isEmpty()) {
+                        billId.setError("Please enter the addbill ID");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billDate.getText().toString().isEmpty()) {
+                        billDate.setError("Please enter your the addbill text");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billField1.getText().toString().isEmpty()) {
+                        billField1.setError("Please enter the provider name");
+                        someFlag = true;
+                        return;
+                    }
+                    if (billField2.getText().toString().isEmpty()) {
+                        billField2.setError("Please enter the data used");
+                        someFlag = true;
+                        return;
+                    }
+                    if (!billId.getText().toString().contains("IN")) {
+                        new MaterialAlertDialogBuilder(AddNewBillActivity.this)
+                                .setTitle("Invalid addbill ID")
+                                .setMessage("Hydro addbill IDs must contain IN")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .show();
+                        someFlag = true;
+                        return;
+                    }
                        /* Internet iObj = new Internet   (edtBillIdText.getText().toString(),
                                 Formatter.getInstance().stringToDate(edtBillDateText.getText().toString()),
                                 Bill.BillType.Internet,
@@ -203,10 +200,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                         Intent mIntent = new Intent(AddNewBillActivity.this, ShowBillDetailsActivity.class);
                         mIntent.putExtra("CustomerBills", customerObj2);
                         startActivity(mIntent);*/
-                    }
-
-          else if (billType.getSelectedItem().toString().equals("MOBILE"))
-                {
+                } else if (billType.getSelectedItem().toString().equals("MOBILE")) {
                     if (billId.getText().toString().isEmpty()) {
                         billId.setError("Please enter the addbill ID");
                         someFlag = true;
@@ -223,7 +217,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                         return;
                     }
                     if (billField5.getText().toString().isEmpty()) {
-                       billField5.setError("Please enter the data used");
+                        billField5.setError("Please enter the data used");
                         someFlag = true;
                         return;
                     }

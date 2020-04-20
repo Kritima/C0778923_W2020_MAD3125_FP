@@ -68,9 +68,11 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         floatingActionButtonAddBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
-                mIntent.putExtra("CustomerBills2",customerObj);
-                startActivity(mIntent);
+                Intent intent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("CustomerBills", customerObj);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
