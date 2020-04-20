@@ -61,8 +61,8 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                customerListArrayList.add(new Customer(suffix.getSelectedItem().toString(),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString()));
-                c.setCustomerArrayList(customerListArrayList);
+                CustomerListActivity.customerListArrayList.add(new Customer(suffix.getSelectedItem().toString(),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString()));
+               // c.setCustomerArrayList(customerListArrayList);
                 Intent intent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
                 startActivity(intent);
             }

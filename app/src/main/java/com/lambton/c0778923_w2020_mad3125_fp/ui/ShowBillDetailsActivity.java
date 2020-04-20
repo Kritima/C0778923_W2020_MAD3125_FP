@@ -1,74 +1,79 @@
 package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-
+import com.lambton.c0778923_w2020_mad3125_fp.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillItemAdapter;
-import com.lambton.c0778923_w2020_mad3125_fp.adapters.UniversalAdapter;
-import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
+import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillsAdapter;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Universal;
 
 import java.util.ArrayList;
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
 
-    Customer customer;
-    private RecyclerView rvBillItemList;
-    private RecyclerView recyclerView;
-    private ArrayList<BillItem> billItemListArrayList;
-    private ArrayList<Universal> universals;
-
-    private BillItemAdapter billItemAdapter;
-    private UniversalAdapter universalAdapter;
-
+    private RecyclerView rvBillsList;
+    private ArrayList<Bill> billsArrayListDetail;
+    private BillsAdapter billsAdapter;
+    private ImageView imgAddButton;
+    private TextView txtTotalAmountValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_bill_details);
+        setContentView(R.layout.activity_show);
 
-        customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.setTitle("YOUR BILLS");
 
-        populateBillItem();
-        populateCustomerDetails();
+        Intent mIntent = getIntent();
+        final Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
+        billsArrayListDetail = customerObj.getBills();
 
-        rvBillItemList = findViewById(R.id.recyclerviewBillItem);
-        recyclerView = findViewById(R.id.recyclerviewCustomerItem);
+        txtTotalAmountValue = findViewById(R.id.txtTotalAmountValue);
 
-        billItemAdapter = new BillItemAdapter(billItemListArrayList);
-        universalAdapter = new UniversalAdapter(universals);
+        if(!billsArrayListDetail.isEmpty())
+        {
+            txtTotalAmountValue.setText("YOUR TOTAL IS " + Formatter.getInstance().doubleFormatter(customerObj.getTotalAmount()));
+        }
+        else
+        {
+            txtTotalAmountValue.setText("NO BILLS TO DISPLAY");
+        }
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        rvBillsList = findViewById(R.id.rvBillsList);
+        billsAdapter = new BillsAdapter(billsArrayListDetail);
 
-        rvBillItemList.setLayoutManager(mLayoutManager);
-        rvBillItemList.setAdapter(billItemAdapter);
+        RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(universalAdapter);
+        rvBillsList.setLayoutManager(mLinearLayoutManager);
+        rvBillsList.setAdapter(billsAdapter);
+
+        imgAddButton = findViewById(R.id.imgAddBill);
+        imgAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
+                mIntent.putExtra("CustomerBills2", customerObj);
+                startActivity(mIntent);
+            }
+        });
     }
 
-    private void populateBillItem() {
-        billItemListArrayList = new ArrayList<>();
 
-        billItemListArrayList.add(new BillItem("Hydro Bill", R.drawable.water));
-        billItemListArrayList.add(new BillItem("Mobile Bill", R.drawable.smartphone));
-        billItemListArrayList.add(new BillItem("Internet Bill", R.drawable.wifi));
-        billItemListArrayList.add(new BillItem("Generate Pdf", R.drawable.pdf));
+    @Override
+    public void onBackPressed() {
+        Intent mIntent = new Intent(ShowBillDetailsActivity.this, CustomerListActivity.class);
+        startActivity(mIntent);
     }
-
-    private void populateCustomerDetails() {
-        universals = new ArrayList<>();
-
-        //universals.add(new Universal("Customer Id : " + customer.getId()));
-        universals.add(new Universal("Customer Name : " + customer.fullName()));
-       // universals.add(new Universal("Customer Email : " + customer.getEmail()));
-    }
-
 }
+

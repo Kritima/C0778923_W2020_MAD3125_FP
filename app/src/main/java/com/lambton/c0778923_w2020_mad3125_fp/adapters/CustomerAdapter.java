@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
+import com.lambton.c0778923_w2020_mad3125_fp.ui.ShowCustomerDetailsActivity;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
             @Override
             public void onClick(View v) {
                 Customer cs = customerArrayList.get(position);
-                Intent intent = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                Intent intent = new Intent(holder.itemView.getContext(), ShowCustomerDetailsActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("customerKey", cs);
                 intent.putExtras(bundle);

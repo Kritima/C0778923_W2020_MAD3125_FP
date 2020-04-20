@@ -7,7 +7,7 @@ public class Bill implements Serializable {
     private String billId;
     private String billDate;
     private String billType;
-    private  Double totalBillAmount;
+    private  Double totalBillAmount = 0.0;
 
     public Bill() {
     }

@@ -2,15 +2,27 @@ package com.lambton.c0778923_w2020_mad3125_fp.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
-public class Customer extends Bill implements Serializable {
+public class Customer implements Serializable {
 
     private String id;
     private String fName;
     private String lName;
     private String email;
     private ArrayList<Customer> customerArrayList;
+    private HashMap<String, Bill> customerBillsHashMap = new HashMap<>();
+    private Double allTotal;
 
+
+    public HashMap<String, Bill> getCustomerBillsHashMap() {
+        return customerBillsHashMap;
+    }
+
+    public void setCustomerBillsHashMap(HashMap<String, Bill> customerBillsHashMap) {
+        this.customerBillsHashMap = customerBillsHashMap;
+    }
 
     public Customer() {
         this.id = "";
@@ -58,4 +70,21 @@ public class Customer extends Bill implements Serializable {
     public void setCustomerArrayList(ArrayList<Customer> customerArrayList) {
         this.customerArrayList = customerArrayList;
     }
-}
+
+    public ArrayList<Bill> getBills()
+        {
+            Collection<Bill> demoValues = customerBillsHashMap.values();
+            ArrayList<Bill> billsList = new ArrayList<>(demoValues);
+            return billsList;
+        }
+
+    public Double getTotalAmount() {
+
+        double allTotal2 = 0.0d;
+        for (Bill b : customerBillsHashMap.values())
+        {
+           // allTotal2 += b.billTotal;
+        }
+        return allTotal2;
+    }
+    }

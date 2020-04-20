@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
@@ -25,7 +28,7 @@ import java.util.ArrayList;
 public class CustomerListActivity extends AppCompatActivity {
 
     private RecyclerView rvCustomerList;
-    private ArrayList<Customer> customerListArrayList;
+    public static ArrayList<Customer> customerListArrayList = new ArrayList<>();
     private CustomerAdapter customerAdapter;
     FloatingActionButton floatingActionButtonAddCustomer;
     Customer c = new Customer();
@@ -35,7 +38,9 @@ public class CustomerListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
 
-        processJson();
+        if(customerListArrayList.isEmpty()) {
+            processJson();
+        }
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);
 
@@ -79,7 +84,7 @@ public class CustomerListActivity extends AppCompatActivity {
         {
             try {
                 JSONArray jsonArray = new JSONArray(js);
-                customerListArrayList = new ArrayList<>();
+                //customerListArrayList = new ArrayList<>();
 
                 for(int i=0; i<jsonArray.length();i++)
                 {
