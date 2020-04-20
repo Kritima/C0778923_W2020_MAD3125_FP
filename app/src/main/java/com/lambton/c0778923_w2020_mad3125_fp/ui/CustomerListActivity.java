@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.lambton.c0778923_w2020_mad3125_fp.DataRepository;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
@@ -40,6 +41,7 @@ public class CustomerListActivity extends AppCompatActivity {
 
         if(customerListArrayList.isEmpty()) {
             processJson();
+            DataRepository.getInstance().loadData();
         }
         rvCustomerList = findViewById(R.id.recyclerviewCustomers);
         floatingActionButtonAddCustomer = findViewById(R.id.floating_action_button);

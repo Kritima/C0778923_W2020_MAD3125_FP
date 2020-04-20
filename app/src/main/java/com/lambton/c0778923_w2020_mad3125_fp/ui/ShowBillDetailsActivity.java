@@ -32,12 +32,15 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bill_details);
 
+
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setTitle("YOUR BILLS");
 
+
+        final Customer customerObj = (Customer) getIntent().getExtras().getSerializable("CustomerBills");
+        billsArrayListDetail = customerObj.getBills();
+
         Intent mIntent = getIntent();
-        //customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
-        final Customer customerObj = mIntent.getParcelableExtra("CustomerBills");
         billsArrayListDetail = customerObj.getBills();
 
         txtTotalAmountValue = findViewById(R.id.txtTotalAmountValue);
@@ -64,7 +67,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);
-                mIntent.putExtra("CustomerBills2", customerObj);
+                mIntent.putExtra("CustomerBills2",customerObj);
                 startActivity(mIntent);
             }
         });

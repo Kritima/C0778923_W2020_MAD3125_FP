@@ -88,7 +88,8 @@ public class Customer implements Serializable {
         return allTotal2;
     }
 
-    public void addBill(String billId, Hydro h1) {
-
+    public void addBill(String billId, Bill bill)
+    {
+        this.customerBillsHashMap.put(billId, bill);
     }
 }
