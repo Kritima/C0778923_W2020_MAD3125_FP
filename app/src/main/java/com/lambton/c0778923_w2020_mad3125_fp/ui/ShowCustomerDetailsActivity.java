@@ -5,12 +5,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillItemAdapter;
-import com.lambton.c0778923_w2020_mad3125_fp.adapters.UniversalAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.BillItem;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Universal;
@@ -38,11 +35,8 @@ public class ShowCustomerDetailsActivity extends AppCompatActivity {
 
         populateCustomerDetails();
 
-        rvBillItemList = findViewById(R.id.recyclerviewBillItem);
         recyclerView = findViewById(R.id.recyclerviewCustomerItem);
 
-        billItemAdapter = new BillItemAdapter(billItemListArrayList);
-        universalAdapter = new UniversalAdapter(universals);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
 
