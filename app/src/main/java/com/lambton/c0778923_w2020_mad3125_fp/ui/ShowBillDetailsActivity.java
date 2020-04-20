@@ -30,7 +30,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show);
+        setContentView(R.layout.activity_show_bill_details);
 
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setTitle("YOUR BILLS");

@@ -53,6 +53,7 @@ public class CustomerListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
+
                 startActivity(intent);
             }
         });
@@ -103,5 +104,11 @@ public class CustomerListActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(CustomerListActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

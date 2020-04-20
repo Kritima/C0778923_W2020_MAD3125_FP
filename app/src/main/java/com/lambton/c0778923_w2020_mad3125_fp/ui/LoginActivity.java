@@ -47,11 +47,14 @@ public class LoginActivity extends AppCompatActivity {
         builder = new AlertDialog.Builder(this);
 
         sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
+        String loginprefs_username = sharedPreferences.getString("username", "");
+        String loginprefs_password = sharedPreferences.getString("password","");
+        email.setText(loginprefs_username);
+        password.setText(loginprefs_password);
+        editor = sharedPreferences.edit();
+
+        sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
         String loginprefs = sharedPreferences.getString("remember", "");
-        if (loginprefs.equals("true")) {
-            Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
-            startActivity(intent);
-        }
 
 
             editor = sharedPreferences.edit();
@@ -64,33 +67,37 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-            login.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                    login.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (email.getText().toString().equals("admin@123") &&
+                                    password.getText().toString().equals("s3cr3t")) {
+                                if (rememberMe.isChecked()) {
+                                    editor.putString("username", email.getText().toString());
+                                    editor.putString("password", password.getText().toString());
+                                    editor.apply();
+                                }
+                                else {
+                                    editor.clear();
+                                    editor.apply();
+                                }
+                                Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
+                                startActivity(intent);
+                            } else {
+                                builder.setMessage("User ID Password Invalid")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+                                                dialog.cancel();
+                                            }
+                                        });
+                                AlertDialog alert = builder.create();
+                                alert.setTitle("Error");
+                                alert.show();
+                            }
+                        }
+                    });
 
-                    if (email.getText().toString().equals("admin@123") &&
-                            password.getText().toString().equals("s3cr3t")) {
-
-                        Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
-                        startActivity(intent);
-
-                    } else {
-                        builder.setMessage("User ID Password Invalid")
-                                .setCancelable(false)
-                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-
-                                    }
-                                });
-
-                        AlertDialog alert = builder.create();
-                        alert.setTitle("Error");
-                        alert.show();
-
-                    }
-                }
-            });
 
             rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override

@@ -102,12 +102,12 @@ public class AddNewBillActivity extends AppCompatActivity {
                     boolean someFlag = false;
                     if (billType.getSelectedItem().toString() == "HYDRO") {
                         if (billId.getText().toString().isEmpty()) {
-                            billId.setError("Please enter the bill ID");
+                            billId.setError("Please enter the addbill ID");
                             someFlag = true;
                             return;
                         }
                         if (billDate.getText().toString().isEmpty()) {
-                            billDate.setError("Please enter your the bill date");
+                            billDate.setError("Please enter your the addbill date");
                             someFlag = true;
                             return;
                         }
@@ -123,8 +123,8 @@ public class AddNewBillActivity extends AppCompatActivity {
                         }
                         if (!billId.getText().toString().contains("HY")) {
                             new MaterialAlertDialogBuilder(AddNewBillActivity.this)
-                                    .setTitle("Invalid bill ID")
-                                    .setMessage("Hydro bill IDs must contain HY")
+                                    .setTitle("Invalid addbill ID")
+                                    .setMessage("Hydro addbill IDs must contain HY")
                                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -150,12 +150,12 @@ public class AddNewBillActivity extends AppCompatActivity {
                     else if (billType.getSelectedItem().toString() == "INTERNET") {
                         if(billId.getText().toString().isEmpty())
                         {
-                            billId.setError("Please enter the bill ID");
+                            billId.setError("Please enter the addbill ID");
                             someFlag = true;
                             return;
                         }
                         if(billDate.getText().toString().isEmpty()){
-                            billDate.setError("Please enter your the bill text");
+                            billDate.setError("Please enter your the addbill text");
                             someFlag = true;
                             return;
                         }
@@ -174,8 +174,8 @@ public class AddNewBillActivity extends AppCompatActivity {
                         if(!billId.getText().toString().contains("IN"))
                         {
                             new MaterialAlertDialogBuilder(AddNewBillActivity.this)
-                                    .setTitle("Invalid bill ID")
-                                    .setMessage("Hydro bill IDs must contain IN")
+                                    .setTitle("Invalid addbill ID")
+                                    .setMessage("Hydro addbill IDs must contain IN")
                                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -201,12 +201,12 @@ public class AddNewBillActivity extends AppCompatActivity {
           else if (billType.getSelectedItem().toString() == "MOBILE")
                 {
                     if (billId.getText().toString().isEmpty()) {
-                        billId.setError("Please enter the bill ID");
+                        billId.setError("Please enter the addbill ID");
                         someFlag = true;
                         return;
                     }
                     if (billDate.getText().toString().isEmpty()) {
-                        billDate.setError("Please enter your the bill date");
+                        billDate.setError("Please enter your the addbill date");
                         someFlag = true;
                         return;
                     }
