@@ -4,18 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.lambton.c0778923_w2020_mad3125_fp.DataRepository;
+import com.lambton.c0778923_w2020_mad3125_fp.util.DataRepository;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 
 import org.json.JSONArray;

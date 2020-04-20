@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.ui.DetailedBillActivity;
-import com.lambton.c0778923_w2020_mad3125_fp.Formatter;
+import com.lambton.c0778923_w2020_mad3125_fp.util.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 

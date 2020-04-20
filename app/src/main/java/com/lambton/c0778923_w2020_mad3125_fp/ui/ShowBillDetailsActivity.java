@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lambton.c0778923_w2020_mad3125_fp.Formatter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.lambton.c0778923_w2020_mad3125_fp.util.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.BillsAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
@@ -26,6 +27,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private BillsAdapter billsAdapter;
     private ImageView imgAddButton;
     private TextView txtTotalAmountValue;
+    FloatingActionButton floatingActionButtonAddBill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,8 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         rvBillsList.setLayoutManager(mLinearLayoutManager);
         rvBillsList.setAdapter(billsAdapter);
 
-        imgAddButton = findViewById(R.id.imgAddBill);
-        imgAddButton.setOnClickListener(new View.OnClickListener() {
+         floatingActionButtonAddBill = findViewById(R.id.floating_action_button_bill);
+        floatingActionButtonAddBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mIntent = new Intent(ShowBillDetailsActivity.this, AddNewBillActivity.class);

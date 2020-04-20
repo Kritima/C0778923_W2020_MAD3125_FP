@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
@@ -16,13 +16,9 @@ import android.widget.Spinner;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
-import com.lambton.c0778923_w2020_mad3125_fp.Formatter;
+import com.lambton.c0778923_w2020_mad3125_fp.util.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Hydro;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Internet;
-import com.lambton.c0778923_w2020_mad3125_fp.models.Mobile;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -64,37 +60,45 @@ public class AddNewBillActivity extends AppCompatActivity {
         l5 = findViewById(R.id.billField5);
         addBill = findViewById(R.id.btnAddBill);
 
+        billType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
+                if (billType.getSelectedItem().toString().equals("HYDRO")) {
+                    l1.setVisibility(View.VISIBLE);
+                    l2.setVisibility(View.VISIBLE);
+                    l3.setVisibility(View.GONE);
+                    l4.setVisibility(View.GONE);
+                    l5.setVisibility(View.GONE);
+                    billField1.setHint("ENTER AGENCY NAME");
+                    billField2.setHint("ENTER UNITS CONSUMED");
+                } else if (billType.getSelectedItem().toString().equals("INTERNET")) {
 
-        if (billType.getSelectedItem().toString() == "HYDRO") {
-            billField1.setVisibility(View.VISIBLE);
-            billField2.setVisibility(View.VISIBLE);
-            billField3.setVisibility(View.GONE);
-            billField1.setHint("ENTER AGENCY NAME");
-            billField2.setHint("ENTER UNITS CONSUMED");
-        }
-        else if (billType.getSelectedItem().toString() == "INTERNET") {
+                    l1.setVisibility(View.VISIBLE);
+                    l2.setVisibility(View.VISIBLE);
+                    l3.setVisibility(View.INVISIBLE);
+                    l4.setVisibility(View.INVISIBLE);
+                    l5.setVisibility(View.INVISIBLE);
+                    billField1.setHint("ENTER PROVIDER NAME");
+                    billField2.setHint("ENTER DATA USED");
+                } else if (billType.getSelectedItem().toString().equals("MOBILE")) {
 
-           l1.setVisibility(View.VISIBLE);
-            l2.setVisibility(View.VISIBLE);
-            l3.setVisibility(View.INVISIBLE);
-            l4.setVisibility(View.INVISIBLE);
-            l5.setVisibility(View.INVISIBLE);
-            billField1.setHint("ENTER PROVIDER NAME");
-            billField2.setHint("ENTER DATA USED");
-        }
+                    l1.setVisibility(View.VISIBLE);
+                    l2.setVisibility(View.VISIBLE);
+                    l3.setVisibility(View.VISIBLE);
+                    l4.setVisibility(View.VISIBLE);
+                    l5.setVisibility(View.VISIBLE);
+                    billField1.setHint("enter the manufacturer");
+                    billField2.setHint("enter your plan name");
+                }
+            }
 
-        else if (billType.getSelectedItem().toString() == "MOBILE")
-        {
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
 
-            l1.setVisibility(View.VISIBLE);
-            l2.setVisibility(View.VISIBLE);
-            l3.setVisibility(View.VISIBLE);
-            l4.setVisibility(View.VISIBLE);
-            l5.setVisibility(View.VISIBLE);
-            billField1.setHint("enter the manufacturer");
-            billField2.setHint("enter your plan name");
-        }
+        });
 
             addBill.setOnClickListener(new View.OnClickListener() {
                 @Override

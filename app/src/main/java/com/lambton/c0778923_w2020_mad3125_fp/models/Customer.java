@@ -80,16 +80,18 @@ public class Customer implements Serializable {
 
     public Double getTotalAmount() {
 
-        double allTotal2 = 0.0d;
-        for (Bill b : customerBillsHashMap.values())
-        {
-           // allTotal2 += b.billTotal;
+            double allTotal2 = 0.0d;
+            for (Bill b : customerBillsHashMap.values())
+            {
+                allTotal2 += b.totalBillAmount;
+            }
+            return allTotal2;
         }
-        return allTotal2;
-    }
 
     public void addBill(String billId, Bill bill)
     {
         this.customerBillsHashMap.put(billId, bill);
     }
+
+
 }

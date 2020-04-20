@@ -1,6 +1,5 @@
-package com.lambton.c0778923_w2020_mad3125_fp;
+package com.lambton.c0778923_w2020_mad3125_fp.util;
 
-import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Hydro;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Internet;

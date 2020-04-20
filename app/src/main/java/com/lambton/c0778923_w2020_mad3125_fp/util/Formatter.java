@@ -1,4 +1,4 @@
-package com.lambton.c0778923_w2020_mad3125_fp;
+package com.lambton.c0778923_w2020_mad3125_fp.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

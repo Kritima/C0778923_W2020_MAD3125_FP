@@ -121,7 +121,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+                app:srcCompat="@drawable/ic_looks_one_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/billField1TextInputLayout"
@@ -134,8 +134,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/billField1TextInputEditText"
                     android:layout_width="330dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Address" />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -158,7 +157,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+                app:srcCompat="@drawable/ic_looks_two_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/billField2TextInputLayout"
@@ -194,7 +193,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+                app:srcCompat="@drawable/ic_looks_3_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/billField3TextInputLayout"
@@ -230,7 +229,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+                app:srcCompat="@drawable/ic_looks_4_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/billField4TextInputLayout"
@@ -266,7 +265,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
-                app:srcCompat="@drawable/ic_location_on_black_24dp" />
+                app:srcCompat="@drawable/ic_looks_5_black_24dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/billField5TextInputLayout"
@@ -301,6 +300,8 @@
                 android:id="@+id/btnAddBill"
                 style=" @style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
+                android:backgroundTint="@color/orange"
+                android:textSize="18sp"
                 android:layout_height="wrap_content"
                 android:text="Add" />
 
