@@ -2,14 +2,27 @@ package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.lambton.c0778923_w2020_mad3125_fp.Formatter;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Bill;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
+import com.lambton.c0778923_w2020_mad3125_fp.models.Mobile;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AddNewBillActivity extends AppCompatActivity {
 
@@ -25,6 +38,7 @@ public class AddNewBillActivity extends AppCompatActivity {
     TextInputEditText billField7;
     TextInputEditText billField8;
     Button addBill;
+    DatePickerDialog.OnDateSetListener mDateSetListener;
 
 
     @Override
@@ -46,18 +60,47 @@ public class AddNewBillActivity extends AppCompatActivity {
         billField7 = findViewById(R.id.billField7TextInputEditText);
         billField8 = findViewById(R.id.billField8TextInputEditText);
 
+        billDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        AddNewBillActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                Calendar cal = Calendar.getInstance();
+                cal.set(year, month, day);
+                billDate.setText(new SimpleDateFormat("dd-MMM-yyyy").format(cal.getTime()).toUpperCase());
+            }
+        };
+
         addBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean someFlag = false;
-                if(edtBillIdText.getText().toString().isEmpty())
+                if(billId.getText().toString().isEmpty())
                 {
                     billId.setError("Please enter the bill ID");
                     someFlag = true;
                     return;
                 }
                 if(billDate.getText().toString().isEmpty()){
-                    billDate.setError("Please enter your the bill text");
+                    billDate.setError("Please enter your the bill date");
                     someFlag = true;
                     return;
                 }
@@ -91,7 +134,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                     someFlag = true;
                     return;
                 }
-                if(!HelperMethods.getInstance().mobileValidation(edtNumberText.getText().toString()))
+                if(!Formatter.getInstance().mobileValidation(edtNumberText.getText().toString()))
                 {
                     edtNumberText.setError("Invalid Phone number");
                     new MaterialAlertDialogBuilder(AddNewBillActivity.this)
