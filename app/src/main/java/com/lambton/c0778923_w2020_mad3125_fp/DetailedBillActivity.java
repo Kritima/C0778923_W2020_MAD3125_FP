@@ -12,3 +12,4 @@ public class DetailedBillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_bill);
     }
 }
+

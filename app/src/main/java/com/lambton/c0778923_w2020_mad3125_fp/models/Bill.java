@@ -1,6 +1,8 @@
 package com.lambton.c0778923_w2020_mad3125_fp.models;
 
-public class Bill {
+import java.io.Serializable;
+
+public class Bill implements Serializable {
 
     private String billId;
     private String billDate;
@@ -46,5 +48,10 @@ public class Bill {
 
     public void setTotalBillAmount(Double totalBillAmount) {
         this.totalBillAmount = totalBillAmount;
+    }
+
+    public Double getBillTotal() {
+        return totalBillAmount;
+
     }
 }
