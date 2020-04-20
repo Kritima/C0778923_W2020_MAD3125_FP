@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     EditText email, password;
     CheckBox rememberMe;
+    TextView aboutUs;
     AlertDialog.Builder builder;
 
     SharedPreferences sharedPreferences;
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         rememberMe = findViewById(R.id.checkBoxRemember);
+        aboutUs = findViewById(R.id.txtAboutUs);
+
         builder = new AlertDialog.Builder(this);
 
         sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
@@ -51,6 +55,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
             editor = sharedPreferences.edit();
+
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, AboutUsActivity.class);
+                startActivity(intent);
+            }
+        });
 
             login.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -413,7 +413,7 @@
             app:layout_constraintTop_toBottomOf="@+id/billField8">
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnAddBill"
                 style=" @style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
