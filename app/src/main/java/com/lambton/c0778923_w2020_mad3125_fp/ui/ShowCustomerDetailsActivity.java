@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.UniversalAdapter;
@@ -22,6 +23,7 @@ public class ShowCustomerDetailsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Universal> universals;
     CardView cvbill;
+    TextView tv1, tv2, tv3, tv4;
 
    // private CustomerItemAdapter billItemAdapter;
     private UniversalAdapter universalAdapter;
@@ -32,14 +34,17 @@ public class ShowCustomerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_details);
 
-        populateCustomerDetails();
+        final Customer customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
 
-        recyclerView = findViewById(R.id.recyclerviewCustomerItem);
         cvbill = findViewById(R.id.card_viewBill);
+        tv1 = findViewById(R.id.textViewCus1);
+        tv2 = findViewById(R.id.textViewCus2);
+        tv3 = findViewById(R.id.textViewCus3);
 
+        tv1.setText("Customer Id: " + customer.getId());
+        tv2.setText("Customer Name: " + customer.fullName());
+        tv3.setText("Email : " + customer.getEmail());
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(universalAdapter);
 
         cvbill.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +58,5 @@ public class ShowCustomerDetailsActivity extends AppCompatActivity {
         });
     }
 
-
-    private void populateCustomerDetails() {
-
-        universals = new ArrayList<>();
-        customer = (Customer) getIntent().getExtras().getSerializable("customerKey");
-
-        //universals.add(new Universal("Customer Id : " + customer.getId()));
-        universals.add(new Universal("Customer Name : " + customer.fullName()));
-       // universals.add(new Universal("Customer Email : " + customer.getEmail()));
-    }
 
 }

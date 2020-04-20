@@ -11,6 +11,7 @@ public class Customer implements Serializable {
     private String fName;
     private String lName;
     private String email;
+    private String gender;
     private ArrayList<Customer> customerArrayList;
     private HashMap<String, Bill> customerBillsHashMap = new HashMap<>();
     private Double allTotal;

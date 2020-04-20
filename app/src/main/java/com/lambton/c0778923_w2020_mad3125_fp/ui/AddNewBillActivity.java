@@ -88,8 +88,11 @@ public class AddNewBillActivity extends AppCompatActivity {
                     l3.setVisibility(View.VISIBLE);
                     l4.setVisibility(View.VISIBLE);
                     l5.setVisibility(View.VISIBLE);
-                    billField1.setHint("enter the manufacturer");
-                    billField2.setHint("enter your plan name");
+                    billField1.setHint("ENTER THE MANUFACTURER");
+                    billField2.setHint("ENTER YOUR PLAN NAME");
+                    billField3.setHint("ENTER YOUR PHONE NUMBER");
+                    billField4.setHint("ENTER THE MINS USED");
+                    billField5.setHint("ENTER THE DATA USED");
                 }
             }
 
@@ -104,7 +107,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     boolean someFlag = false;
-                    if (billType.getSelectedItem().toString() == "HYDRO") {
+                    if (billType.getSelectedItem().toString().equals("HYDRO")) {
                         if (billId.getText().toString().isEmpty()) {
                             billId.setError("Please enter the addbill ID");
                             someFlag = true;
@@ -151,7 +154,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                         startActivity(mIntent);
                     }*/
                     }
-                    else if (billType.getSelectedItem().toString() == "INTERNET") {
+                    else if (billType.getSelectedItem().toString().equals("INTERNET")) {
                         if(billId.getText().toString().isEmpty())
                         {
                             billId.setError("Please enter the addbill ID");
@@ -202,7 +205,7 @@ public class AddNewBillActivity extends AppCompatActivity {
                         startActivity(mIntent);*/
                     }
 
-          else if (billType.getSelectedItem().toString() == "MOBILE")
+          else if (billType.getSelectedItem().toString().equals("MOBILE"))
                 {
                     if (billId.getText().toString().isEmpty()) {
                         billId.setError("Please enter the addbill ID");

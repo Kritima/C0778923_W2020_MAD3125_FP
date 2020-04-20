@@ -2,6 +2,7 @@ package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +11,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lambton.c0778923_w2020_mad3125_fp.R;
 import com.lambton.c0778923_w2020_mad3125_fp.adapters.CustomerAdapter;
 import com.lambton.c0778923_w2020_mad3125_fp.models.Customer;
+import com.lambton.c0778923_w2020_mad3125_fp.util.Formatter;
 
 import java.util.ArrayList;
 
@@ -60,12 +63,26 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                CustomerListActivity.customerListArrayList.add(new Customer(suffix.getSelectedItem().toString(),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString()));
-               // c.setCustomerArrayList(customerListArrayList);
-                Intent intent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
-                startActivity(intent);
-            }
+                if (!Formatter.getInstance().emailValidation(email.getText().toString())) {
+                    email.setError("Invalid Email");
+                    new MaterialAlertDialogBuilder(AddNewCustomerActivity.this)
+                            .setTitle("Invalid Email")
+                            .setMessage("Please check the email you have entered")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .show();
+                }
+                    else
+                    {
+                        CustomerListActivity.customerListArrayList.add(new Customer(suffix.getSelectedItem().toString(), firstName.getText().toString(), lastName.getText().toString(), email.getText().toString()));
+                        Intent intent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
+                        startActivity(intent);
+                    }
+                }
         });
 
 
