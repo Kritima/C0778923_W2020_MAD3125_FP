@@ -2,6 +2,7 @@ package com.lambton.c0778923_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 
 public class AddNewCustomerActivity extends AppCompatActivity {
 
-    private ArrayList<Customer> customerNewListArrayList;
+    private ArrayList<Customer> customerListArrayList;
     Customer c = new Customer();
     private CustomerAdapter customerAdapter;
 
@@ -59,7 +60,11 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
+                customerListArrayList.add(new Customer(suffix.getSelectedItem().toString(),firstName.getText().toString(),lastName.getText().toString(),email.getText().toString()));
+                c.setCustomerArrayList(customerListArrayList);
+                Intent intent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
+                startActivity(intent);
             }
         });
 
