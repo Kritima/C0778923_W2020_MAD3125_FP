@@ -34,9 +34,9 @@
     <string name="about_us">ABOUT US</string>
 
     <string-array name="billArray">
-        <item>Hydro</item>
-        <item>Internet</item>
-        <item>Mobile</item>
+        <item>HYDRO</item>
+        <item>INTERNET</item>
+        <item>MOBILE</item>
     </string-array>
 
 </resources>
